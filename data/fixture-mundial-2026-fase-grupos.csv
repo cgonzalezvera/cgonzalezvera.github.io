@@ -1,0 +1,73 @@
+Grupo,Fecha calendario,Hora,Estadio,Ciudad,Pais sede,Local,Visitante,Jornada
+G,11/06,13:00,Mercedes-Benz Stadium,Atlanta,USA,FRA,ECU,1
+G,11/06,16:00,MetLife Stadium,New York/New Jersey,USA,IRQ,ALG,1
+A,11/06,19:00,Estadio Azteca,Mexico City,Mexico,MEX,POL,1
+A,11/06,22:00,SoFi Stadium,Los Angeles,USA,KOR,CIV,1
+H,12/06,13:00,AT&T Stadium,Dallas,USA,GER,COL,1
+B,12/06,16:00,MetLife Stadium,New York/New Jersey,USA,USA,SUI,1
+H,12/06,19:00,Lumen Field,Seattle,USA,JOR,TUN,1
+B,12/06,22:00,Hard Rock Stadium,Miami,USA,JPN,EGY,1
+I,13/06,13:00,Gillette Stadium,Boston,USA,ENG,SCO,1
+C,13/06,16:00,BMO Field,Toronto,Canada,CAN,CRO,1
+I,13/06,19:00,Mercedes-Benz Stadium,Atlanta,USA,PAN,URU,1
+C,13/06,22:00,Estadio BBVA,Monterrey,Mexico,AUS,SEN,1
+J,14/06,13:00,Levi's Stadium,San Francisco Bay Area,USA,NED,CZE,1
+D,14/06,16:00,MetLife Stadium,New York/New Jersey,USA,ARG,DEN,1
+J,14/06,19:00,Lincoln Financial Field,Philadelphia,USA,HON,MAR,1
+D,14/06,22:00,Mercedes-Benz Stadium,Atlanta,USA,NGA,IRN,1
+K,15/06,13:00,Arrowhead Stadium,Kansas City,USA,BEL,SRB,1
+E,15/06,16:00,SoFi Stadium,Los Angeles,USA,BRA,AUT,1
+K,15/06,19:00,BC Place,Vancouver,Canada,CRC,NZL,1
+E,15/06,22:00,Levi's Stadium,San Francisco Bay Area,USA,KSA,RSA,1
+L,16/06,13:00,Estadio Akron,Guadalajara,Mexico,POR,ITA,1
+F,16/06,16:00,Hard Rock Stadium,Miami,USA,ESP,PAR,1
+L,16/06,19:00,NRG Stadium,Houston,USA,IDN,VEN,1
+F,16/06,22:00,AT&T Stadium,Dallas,USA,QAT,CMR,1
+G,17/06,13:00,Lincoln Financial Field,Philadelphia,USA,FRA,IRQ,2
+A,17/06,16:00,Estadio Akron,Guadalajara,Mexico,MEX,KOR,2
+G,17/06,19:00,SoFi Stadium,Los Angeles,USA,ECU,ALG,2
+A,17/06,22:00,AT&T Stadium,Dallas,USA,POL,CIV,2
+H,18/06,13:00,AT&T Stadium,Dallas,USA,GER,JOR,2
+H,18/06,16:00,NRG Stadium,Houston,USA,COL,TUN,2
+B,18/06,19:00,Lumen Field,Seattle,USA,USA,JPN,2
+B,18/06,22:00,Levi's Stadium,San Francisco Bay Area,USA,SUI,EGY,2
+I,19/06,13:00,MetLife Stadium,New York/New Jersey,USA,ENG,PAN,2
+I,19/06,16:00,AT&T Stadium,Dallas,USA,SCO,URU,2
+C,19/06,19:00,BC Place,Vancouver,Canada,CAN,AUS,2
+C,19/06,22:00,Estadio BBVA,Monterrey,Mexico,CRO,SEN,2
+J,20/06,13:00,BMO Field,Toronto,Canada,NED,HON,2
+J,20/06,16:00,NRG Stadium,Houston,USA,CZE,MAR,2
+D,20/06,19:00,SoFi Stadium,Los Angeles,USA,ARG,NGA,2
+D,20/06,22:00,Gillette Stadium,Boston,USA,DEN,IRN,2
+K,21/06,13:00,Hard Rock Stadium,Miami,USA,BEL,CRC,2
+K,21/06,16:00,Arrowhead Stadium,Kansas City,USA,SRB,NZL,2
+E,21/06,19:00,Lumen Field,Seattle,USA,BRA,KSA,2
+E,21/06,22:00,NRG Stadium,Houston,USA,AUT,RSA,2
+L,22/06,13:00,Estadio BBVA,Monterrey,Mexico,POR,IDN,2
+L,22/06,16:00,Lincoln Financial Field,Philadelphia,USA,ITA,VEN,2
+F,22/06,19:00,Hard Rock Stadium,Miami,USA,ESP,QAT,2
+F,22/06,22:00,Arrowhead Stadium,Kansas City,USA,PAR,CMR,2
+I,23/06,14:00,Gillette Stadium,Boston,USA,ENG,URU,3
+I,23/06,14:00,Mercedes-Benz Stadium,Atlanta,USA,SCO,PAN,3
+B,23/06,18:00,MetLife Stadium,New York/New Jersey,USA,USA,EGY,3
+B,23/06,18:00,Hard Rock Stadium,Miami,USA,SUI,JPN,3
+A,23/06,22:00,Estadio Azteca,Mexico City,Mexico,MEX,CIV,3
+A,23/06,22:00,Estadio Akron,Guadalajara,Mexico,POL,KOR,3
+C,24/06,14:00,BMO Field,Toronto,Canada,CAN,SEN,3
+C,24/06,14:00,BC Place,Vancouver,Canada,CRO,AUS,3
+J,24/06,18:00,Levi's Stadium,San Francisco Bay Area,USA,NED,MAR,3
+J,24/06,18:00,Lincoln Financial Field,Philadelphia,USA,CZE,HON,3
+D,24/06,22:00,MetLife Stadium,New York/New Jersey,USA,ARG,IRN,3
+D,24/06,22:00,Mercedes-Benz Stadium,Atlanta,USA,DEN,NGA,3
+F,25/06,14:00,AT&T Stadium,Dallas,USA,ESP,CMR,3
+F,25/06,14:00,Arrowhead Stadium,Kansas City,USA,PAR,QAT,3
+K,25/06,18:00,Hard Rock Stadium,Miami,USA,BEL,NZL,3
+K,25/06,18:00,BC Place,Vancouver,Canada,SRB,CRC,3
+E,25/06,22:00,SoFi Stadium,Los Angeles,USA,BRA,RSA,3
+E,25/06,22:00,Levi's Stadium,San Francisco Bay Area,USA,AUT,KSA,3
+L,26/06,14:00,Estadio Akron,Guadalajara,Mexico,POR,VEN,3
+L,26/06,14:00,Estadio BBVA,Monterrey,Mexico,ITA,IDN,3
+H,26/06,18:00,AT&T Stadium,Dallas,USA,GER,TUN,3
+H,26/06,18:00,Lumen Field,Seattle,USA,COL,JOR,3
+G,26/06,22:00,Mercedes-Benz Stadium,Atlanta,USA,FRA,ALG,3
+G,26/06,22:00,MetLife Stadium,New York/New Jersey,USA,ECU,IRQ,3

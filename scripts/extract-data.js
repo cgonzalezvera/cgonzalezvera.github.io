@@ -2,10 +2,12 @@
 /**
  * FIFA 2026 World Cup - Data Extraction Script
  *
- * This script generates the fixture data for the FIFA 2026 World Cup.
- * The data is based on:
- *   - Official FIFA 2026 World Cup schedule and venue information
- *   - Official group draw results (December 5, 2024)
+ * PRIMARY DATA SOURCE:
+ *   data/fixture-mundial-2026-fase-grupos.csv  (group stage schedule)
+ *
+ * This script reads the group-stage schedule from the CSV and combines it with
+ * the team/group definitions below to produce src/data/fixtures.json consumed
+ * by the Vue app.  Knockout-stage matches are defined inline (teams TBD).
  *
  * Usage:
  *   npm run data:extract
@@ -13,15 +15,16 @@
  * Output:
  *   src/data/fixtures.json
  *
+ * To correct group-stage data: edit the CSV and re-run this script.
+ * To correct team/group assignments: edit the `groups` object below.
+ *
  * Notes:
- *   - All match times are in ET (Eastern Time, UTC-4 during tournament in June-July)
- *   - Group assignments reflect the official draw but may need verification
- *   - Knockout stage teams are TBD until the group stage completes
- *   - If you have access to updated/corrected information, edit the groups
- *     object below and re-run this script.
+ *   - All match times are in ET (Eastern Time, UTC-4 during tournament)
+ *   - CSV dates are DD/MM; the script assumes year 2026
+ *   - Venue names are normalised on read (e.g. typos corrected)
  */
 
-import { writeFileSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -131,122 +134,166 @@ const groups = {
 }
 
 // ============================================================
-// VENUES
-// [city, stadium, country]
+// VENUE NAME NORMALISATIONS
+// Keys are the raw strings that may appear in the CSV; values are
+// the canonical [venue, city, country] tuples used in the output.
+// Add entries here whenever a typo or variation needs to be mapped.
 // ============================================================
-const venues = [
-  ["Mexico City", "Estadio Azteca", "Mexico"],
-  ["Guadalajara", "Estadio Akron", "Mexico"],
-  ["Monterrey", "Estadio BBVA", "Mexico"],
-  ["New York/New Jersey", "MetLife Stadium", "USA"],
-  ["Los Angeles", "SoFi Stadium", "USA"],
-  ["Dallas", "AT&T Stadium", "USA"],
-  ["San Francisco Bay Area", "Levi's Stadium", "USA"],
-  ["Miami", "Hard Rock Stadium", "USA"],
-  ["Atlanta", "Mercedes-Benz Stadium", "USA"],
-  ["Seattle", "Lumen Field", "USA"],
-  ["Boston", "Gillette Stadium", "USA"],
-  ["Philadelphia", "Lincoln Financial Field", "USA"],
-  ["Kansas City", "Arrowhead Stadium", "USA"],
-  ["Houston", "NRG Stadium", "USA"],
-  ["Toronto", "BMO Field", "Canada"],
-  ["Vancouver", "BC Place", "Canada"]
-]
+const venueNormalisations = {
+  // Typo variants → canonical
+  "BC Place Vanvouver": ["BC Place", "Vancouver", "Canada"],
+  "BC Place Vancouver":  ["BC Place", "Vancouver", "Canada"],
+  // Country variants
+  "Mercedes Benz Stadium":   ["Mercedes-Benz Stadium", "Atlanta",              "USA"],
+  "Levis Stadium":           ["Levi's Stadium",        "San Francisco Bay Area","USA"],
+  "Levi Stadium":            ["Levi's Stadium",        "San Francisco Bay Area","USA"],
+}
+
+/** Normalise a venue/city pair from the CSV into {venue, city, country}.
+ *  Checks by venue name alone first, then by combined "venue city" string.
+ *  NOTE: The CSV parser uses a simple comma-split, so venue/city fields
+ *  must not contain literal commas (all current values are safe). */
+function normaliseVenue(rawVenue, rawCity, rawCountry) {
+  if (venueNormalisations[rawVenue]) {
+    const [v, c, co] = venueNormalisations[rawVenue]
+    return { venue: v, city: c, country: co }
+  }
+  const combined = `${rawVenue} ${rawCity}`.trim()
+  if (venueNormalisations[combined]) {
+    const [v, c, co] = venueNormalisations[combined]
+    return { venue: v, city: c, country: co }
+  }
+  return { venue: rawVenue.trim(), city: rawCity.trim(), country: rawCountry.trim() }
+}
 
 // ============================================================
-// SCHEDULE GENERATION
+// BUILD A FLAT TEAM MAP  code → team object
+// ============================================================
+const teamByCode = {}
+for (const [group, { teams }] of Object.entries(groups)) {
+  for (const t of teams) {
+    teamByCode[t.code] = { ...t, group }
+  }
+}
+
+// ============================================================
+// CSV PARSING – GROUP STAGE
+// Primary source: data/fixture-mundial-2026-fase-grupos.csv
+// Columns: Grupo,Fecha calendario,Hora,Estadio,Ciudad,Pais sede,Local,Visitante,Jornada
 // ============================================================
 
-const groupList = ["A","B","C","D","E","F","G","H","I","J","K","L"]
-
-// Venue assignment per group, per match index (0-5)
-const venueAssignments = {
-  A: [0, 4, 1, 5, 0, 1],
-  B: [3, 7, 9, 6, 3, 7],
-  C: [14, 2, 15, 2, 14, 15],
-  D: [3, 8, 4, 10, 3, 8],
-  E: [4, 6, 9, 13, 4, 6],
-  F: [7, 5, 7, 12, 5, 12],
-  G: [8, 3, 11, 4, 8, 3],
-  H: [5, 9, 6, 13, 5, 9],
-  I: [10, 8, 3, 5, 10, 8],
-  J: [6, 11, 14, 4, 6, 11],
-  K: [12, 15, 7, 9, 12, 15],
-  L: [1, 13, 2, 11, 1, 2]
+/** Parse a DD/MM date string into an ISO date string (YYYY-MM-DD, year 2026).
+ *  Throws if the format is not exactly DD/MM. */
+function parseCsvDate(ddmm, rowNum) {
+  if (!/^\d{1,2}\/\d{2}$/.test(ddmm)) {
+    throw new Error(`Row ${rowNum}: invalid date format "${ddmm}" (expected DD/MM)`)
+  }
+  const [dd, mm] = ddmm.split('/')
+  return `2026-${mm.padStart(2,'0')}-${dd.padStart(2,'0')}`
 }
 
-// Matchday 1 dates (each group plays once on its assigned day)
-const md1Dates = {
-  A: "2026-06-11", B: "2026-06-12", C: "2026-06-13",
-  D: "2026-06-14", E: "2026-06-15", F: "2026-06-16",
-  G: "2026-06-11", H: "2026-06-12", I: "2026-06-13",
-  J: "2026-06-14", K: "2026-06-15", L: "2026-06-16"
-}
+const REQUIRED_COLUMNS = ['Grupo', 'Fecha calendario', 'Hora', 'Estadio', 'Ciudad', 'Pais sede', 'Local', 'Visitante', 'Jornada']
 
-const md2Dates = {
-  A: "2026-06-17", B: "2026-06-18", C: "2026-06-19",
-  D: "2026-06-20", E: "2026-06-21", F: "2026-06-22",
-  G: "2026-06-17", H: "2026-06-18", I: "2026-06-19",
-  J: "2026-06-20", K: "2026-06-21", L: "2026-06-22"
-}
+const csvPath = join(__dirname, '../data/fixture-mundial-2026-fase-grupos.csv')
+const csvText = readFileSync(csvPath, 'utf-8')
+const csvLines = csvText.split('\n').map(l => l.trim()).filter(Boolean)
+const csvHeader = csvLines[0].split(',').map(h => h.trim())
 
-// Matchday 3 (simultaneous - same time per group pair)
-const md3Dates = {
-  A: "2026-06-23", B: "2026-06-23", C: "2026-06-24",
-  D: "2026-06-24", E: "2026-06-25", F: "2026-06-25",
-  G: "2026-06-26", H: "2026-06-26", I: "2026-06-23",
-  J: "2026-06-24", K: "2026-06-25", L: "2026-06-26"
-}
+const COL = {}
+csvHeader.forEach((h, i) => { COL[h] = i })
 
-// Match pairings index in teams array for each of the 6 group matches
-const matchPairings = [
-  [0,1], [2,3],  // MD1
-  [0,2], [1,3],  // MD2
-  [0,3], [1,2]   // MD3 (simultaneous)
-]
+// Validate that all required columns are present
+for (const col of REQUIRED_COLUMNS) {
+  if (COL[col] === undefined) {
+    throw new Error(`CSV is missing required column: "${col}". Found: ${csvHeader.join(', ')}`)
+  }
+}
 
 let matches = []
 let id = 1
 
-// Group stage
-for (const g of groupList) {
-  const teams = groups[g].teams
-  const vas = venueAssignments[g]
+for (let i = 1; i < csvLines.length; i++) {
+  const cols = csvLines[i].split(',')
+  if (cols.length < csvHeader.length) continue  // skip incomplete rows
 
-  for (let m = 0; m < 6; m++) {
-    const [ti, tj] = matchPairings[m]
-    const ht = teams[ti]
-    const at = teams[tj]
-    const [city, venue, country] = venues[vas[m]]
+  const group      = cols[COL['Grupo']].trim()
+  const dateStr    = cols[COL['Fecha calendario']].trim()
+  const time       = cols[COL['Hora']].trim()
+  const rawVenue   = cols[COL['Estadio']].trim()
+  const rawCity    = cols[COL['Ciudad']].trim()
+  const rawCountry = cols[COL['Pais sede']].trim()
+  const localCode  = cols[COL['Local']].trim()
+  const awayCode   = cols[COL['Visitante']].trim()
+  const matchday   = parseInt(cols[COL['Jornada']].trim(), 10)
 
-    let date, time
-    if (m < 2) {
-      date = md1Dates[g]
-      time = m === 0 ? "15:00" : "18:00"
-    } else if (m < 4) {
-      date = md2Dates[g]
-      time = m === 2 ? "15:00" : "21:00"
-    } else {
-      date = md3Dates[g]
-      time = "15:00"
+  const ht = teamByCode[localCode]
+  const at = teamByCode[awayCode]
+  if (!ht) throw new Error(`Unknown team code in CSV row ${i + 1}: "${localCode}"`)
+  if (!at) throw new Error(`Unknown team code in CSV row ${i + 1}: "${awayCode}"`)
+
+  const { venue, city, country } = normaliseVenue(rawVenue, rawCity, rawCountry)
+
+  matches.push({
+    id: id++,
+    stage: `Group ${group}`,
+    group,
+    matchday,
+    date: parseCsvDate(dateStr, i + 1),
+    time,
+    timezone: "ET",
+    city,
+    venue,
+    country,
+    homeTeam: { name: ht.name, code: ht.code, flag: ht.flag, confederation: ht.confederation },
+    awayTeam: { name: at.name, code: at.code, flag: at.flag, confederation: at.confederation }
+  })
+}
+
+// ============================================================
+// VALIDATION
+// ============================================================
+const groupMatches = matches.filter(m => m.group)
+
+if (groupMatches.length !== 72) {
+  throw new Error(`Expected 72 group-stage matches, found ${groupMatches.length}`)
+}
+
+for (const [g, { teams }] of Object.entries(groups)) {
+  if (teams.length !== 4) {
+    throw new Error(`Group ${g} must have exactly 4 teams, found ${teams.length}`)
+  }
+  for (const t of teams) {
+    const played = groupMatches.filter(
+      m => m.homeTeam.code === t.code || m.awayTeam.code === t.code
+    )
+    if (played.length !== 3) {
+      throw new Error(`${t.name} (${t.code}) must have 3 group matches, found ${played.length}`)
     }
-
-    matches.push({
-      id: id++,
-      stage: `Group ${g}`,
-      group: g,
-      matchday: m < 2 ? 1 : m < 4 ? 2 : 3,
-      date,
-      time,
-      timezone: "ET",
-      city,
-      venue,
-      country,
-      homeTeam: { name: ht.name, code: ht.code, flag: ht.flag, confederation: ht.confederation },
-      awayTeam: { name: at.name, code: at.code, flag: at.flag, confederation: at.confederation }
-    })
   }
 }
+
+// ============================================================
+// KNOCKOUT ROUNDS  (teams TBD – defined inline)
+// ============================================================
+
+const venues = [
+  ["Mexico City",            "Estadio Azteca",          "Mexico"],
+  ["Guadalajara",            "Estadio Akron",            "Mexico"],
+  ["Monterrey",              "Estadio BBVA",             "Mexico"],
+  ["New York/New Jersey",    "MetLife Stadium",          "USA"],
+  ["Los Angeles",            "SoFi Stadium",             "USA"],
+  ["Dallas",                 "AT&T Stadium",             "USA"],
+  ["San Francisco Bay Area", "Levi's Stadium",           "USA"],
+  ["Miami",                  "Hard Rock Stadium",        "USA"],
+  ["Atlanta",                "Mercedes-Benz Stadium",    "USA"],
+  ["Seattle",                "Lumen Field",              "USA"],
+  ["Boston",                 "Gillette Stadium",         "USA"],
+  ["Philadelphia",           "Lincoln Financial Field",  "USA"],
+  ["Kansas City",            "Arrowhead Stadium",        "USA"],
+  ["Houston",                "NRG Stadium",              "USA"],
+  ["Toronto",                "BMO Field",                "Canada"],
+  ["Vancouver",              "BC Place",                 "Canada"]
+]
 
 // Round of 32
 const r32Schedule = [
@@ -370,7 +417,7 @@ const output = {
     totalGroups: 12,
     totalMatches: matches.length,
     timezone: "ET (Eastern Time, UTC-4 during tournament in June-July)",
-    dataSource: "Manually compiled from official FIFA 2026 schedule and public draw results (December 5, 2024). Group assignments reflect best available information and may require verification.",
+    dataSource: "Group-stage schedule: data/fixture-mundial-2026-fase-grupos.csv (primary source). Group/team assignments: scripts/extract-data.js groups object. Based on official FIFA 2026 World Cup draw (December 5, 2024).",
     lastUpdated: new Date().toISOString().slice(0, 10)
   },
   teams: allTeams,

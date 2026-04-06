@@ -13,7 +13,7 @@
     "totalGroups": 12,
     "totalMatches": 104,
     "timezone": "ET (Eastern Time, UTC-4 during tournament in June-July)",
-    "dataSource": "Manually compiled from official FIFA 2026 schedule and public draw results (December 5, 2024). Group assignments reflect best available information and may require verification.",
+    "dataSource": "Group-stage schedule: data/fixture-mundial-2026-fase-grupos.csv (primary source). Group/team assignments: scripts/extract-data.js groups object. Based on official FIFA 2026 World Cup draw (December 5, 2024).",
     "lastUpdated": "2026-04-06"
   },
   "teams": [
@@ -309,11 +309,59 @@
   "matches": [
     {
       "id": 1,
+      "stage": "Group G",
+      "group": "G",
+      "matchday": 1,
+      "date": "2026-06-11",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "Atlanta",
+      "venue": "Mercedes-Benz Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "France",
+        "code": "FRA",
+        "flag": "🇫🇷",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Ecuador",
+        "code": "ECU",
+        "flag": "🇪🇨",
+        "confederation": "CONMEBOL"
+      }
+    },
+    {
+      "id": 2,
+      "stage": "Group G",
+      "group": "G",
+      "matchday": 1,
+      "date": "2026-06-11",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "New York/New Jersey",
+      "venue": "MetLife Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Iraq",
+        "code": "IRQ",
+        "flag": "🇮🇶",
+        "confederation": "AFC"
+      },
+      "awayTeam": {
+        "name": "Algeria",
+        "code": "ALG",
+        "flag": "🇩🇿",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 3,
       "stage": "Group A",
       "group": "A",
       "matchday": 1,
       "date": "2026-06-11",
-      "time": "15:00",
+      "time": "19:00",
       "timezone": "ET",
       "city": "Mexico City",
       "venue": "Estadio Azteca",
@@ -332,12 +380,12 @@
       }
     },
     {
-      "id": 2,
+      "id": 4,
       "stage": "Group A",
       "group": "A",
       "matchday": 1,
       "date": "2026-06-11",
-      "time": "18:00",
+      "time": "22:00",
       "timezone": "ET",
       "city": "Los Angeles",
       "venue": "SoFi Stadium",
@@ -356,108 +404,36 @@
       }
     },
     {
-      "id": 3,
-      "stage": "Group A",
-      "group": "A",
-      "matchday": 2,
-      "date": "2026-06-17",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Guadalajara",
-      "venue": "Estadio Akron",
-      "country": "Mexico",
-      "homeTeam": {
-        "name": "Mexico",
-        "code": "MEX",
-        "flag": "🇲🇽",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "South Korea",
-        "code": "KOR",
-        "flag": "🇰🇷",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 4,
-      "stage": "Group A",
-      "group": "A",
-      "matchday": 2,
-      "date": "2026-06-17",
-      "time": "21:00",
+      "id": 5,
+      "stage": "Group H",
+      "group": "H",
+      "matchday": 1,
+      "date": "2026-06-12",
+      "time": "13:00",
       "timezone": "ET",
       "city": "Dallas",
       "venue": "AT&T Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "Poland",
-        "code": "POL",
-        "flag": "🇵🇱",
+        "name": "Germany",
+        "code": "GER",
+        "flag": "🇩🇪",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Ivory Coast",
-        "code": "CIV",
-        "flag": "🇨🇮",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 5,
-      "stage": "Group A",
-      "group": "A",
-      "matchday": 3,
-      "date": "2026-06-23",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Mexico City",
-      "venue": "Estadio Azteca",
-      "country": "Mexico",
-      "homeTeam": {
-        "name": "Mexico",
-        "code": "MEX",
-        "flag": "🇲🇽",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Ivory Coast",
-        "code": "CIV",
-        "flag": "🇨🇮",
-        "confederation": "CAF"
+        "name": "Colombia",
+        "code": "COL",
+        "flag": "🇨🇴",
+        "confederation": "CONMEBOL"
       }
     },
     {
       "id": 6,
-      "stage": "Group A",
-      "group": "A",
-      "matchday": 3,
-      "date": "2026-06-23",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Guadalajara",
-      "venue": "Estadio Akron",
-      "country": "Mexico",
-      "homeTeam": {
-        "name": "Poland",
-        "code": "POL",
-        "flag": "🇵🇱",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "South Korea",
-        "code": "KOR",
-        "flag": "🇰🇷",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 7,
       "stage": "Group B",
       "group": "B",
       "matchday": 1,
       "date": "2026-06-12",
-      "time": "15:00",
+      "time": "16:00",
       "timezone": "ET",
       "city": "New York/New Jersey",
       "venue": "MetLife Stadium",
@@ -476,12 +452,36 @@
       }
     },
     {
+      "id": 7,
+      "stage": "Group H",
+      "group": "H",
+      "matchday": 1,
+      "date": "2026-06-12",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Seattle",
+      "venue": "Lumen Field",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Jordan",
+        "code": "JOR",
+        "flag": "🇯🇴",
+        "confederation": "AFC"
+      },
+      "awayTeam": {
+        "name": "Tunisia",
+        "code": "TUN",
+        "flag": "🇹🇳",
+        "confederation": "CAF"
+      }
+    },
+    {
       "id": 8,
       "stage": "Group B",
       "group": "B",
       "matchday": 1,
       "date": "2026-06-12",
-      "time": "18:00",
+      "time": "22:00",
       "timezone": "ET",
       "city": "Miami",
       "venue": "Hard Rock Stadium",
@@ -501,347 +501,131 @@
     },
     {
       "id": 9,
-      "stage": "Group B",
-      "group": "B",
-      "matchday": 2,
-      "date": "2026-06-18",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Seattle",
-      "venue": "Lumen Field",
-      "country": "USA",
-      "homeTeam": {
-        "name": "USA",
-        "code": "USA",
-        "flag": "🇺🇸",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Japan",
-        "code": "JPN",
-        "flag": "🇯🇵",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 10,
-      "stage": "Group B",
-      "group": "B",
-      "matchday": 2,
-      "date": "2026-06-18",
-      "time": "21:00",
-      "timezone": "ET",
-      "city": "San Francisco Bay Area",
-      "venue": "Levi's Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Switzerland",
-        "code": "SUI",
-        "flag": "🇨🇭",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Egypt",
-        "code": "EGY",
-        "flag": "🇪🇬",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 11,
-      "stage": "Group B",
-      "group": "B",
-      "matchday": 3,
-      "date": "2026-06-23",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "New York/New Jersey",
-      "venue": "MetLife Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "USA",
-        "code": "USA",
-        "flag": "🇺🇸",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Egypt",
-        "code": "EGY",
-        "flag": "🇪🇬",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 12,
-      "stage": "Group B",
-      "group": "B",
-      "matchday": 3,
-      "date": "2026-06-23",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Miami",
-      "venue": "Hard Rock Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Switzerland",
-        "code": "SUI",
-        "flag": "🇨🇭",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Japan",
-        "code": "JPN",
-        "flag": "🇯🇵",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 13,
-      "stage": "Group C",
-      "group": "C",
+      "stage": "Group I",
+      "group": "I",
       "matchday": 1,
       "date": "2026-06-13",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Toronto",
-      "venue": "BMO Field",
-      "country": "Canada",
-      "homeTeam": {
-        "name": "Canada",
-        "code": "CAN",
-        "flag": "🇨🇦",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Croatia",
-        "code": "CRO",
-        "flag": "🇭🇷",
-        "confederation": "UEFA"
-      }
-    },
-    {
-      "id": 14,
-      "stage": "Group C",
-      "group": "C",
-      "matchday": 1,
-      "date": "2026-06-13",
-      "time": "18:00",
-      "timezone": "ET",
-      "city": "Monterrey",
-      "venue": "Estadio BBVA",
-      "country": "Mexico",
-      "homeTeam": {
-        "name": "Australia",
-        "code": "AUS",
-        "flag": "🇦🇺",
-        "confederation": "AFC"
-      },
-      "awayTeam": {
-        "name": "Senegal",
-        "code": "SEN",
-        "flag": "🇸🇳",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 15,
-      "stage": "Group C",
-      "group": "C",
-      "matchday": 2,
-      "date": "2026-06-19",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Vancouver",
-      "venue": "BC Place",
-      "country": "Canada",
-      "homeTeam": {
-        "name": "Canada",
-        "code": "CAN",
-        "flag": "🇨🇦",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Australia",
-        "code": "AUS",
-        "flag": "🇦🇺",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 16,
-      "stage": "Group C",
-      "group": "C",
-      "matchday": 2,
-      "date": "2026-06-19",
-      "time": "21:00",
-      "timezone": "ET",
-      "city": "Monterrey",
-      "venue": "Estadio BBVA",
-      "country": "Mexico",
-      "homeTeam": {
-        "name": "Croatia",
-        "code": "CRO",
-        "flag": "🇭🇷",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Senegal",
-        "code": "SEN",
-        "flag": "🇸🇳",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 17,
-      "stage": "Group C",
-      "group": "C",
-      "matchday": 3,
-      "date": "2026-06-24",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Toronto",
-      "venue": "BMO Field",
-      "country": "Canada",
-      "homeTeam": {
-        "name": "Canada",
-        "code": "CAN",
-        "flag": "🇨🇦",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Senegal",
-        "code": "SEN",
-        "flag": "🇸🇳",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 18,
-      "stage": "Group C",
-      "group": "C",
-      "matchday": 3,
-      "date": "2026-06-24",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Vancouver",
-      "venue": "BC Place",
-      "country": "Canada",
-      "homeTeam": {
-        "name": "Croatia",
-        "code": "CRO",
-        "flag": "🇭🇷",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Australia",
-        "code": "AUS",
-        "flag": "🇦🇺",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 19,
-      "stage": "Group D",
-      "group": "D",
-      "matchday": 1,
-      "date": "2026-06-14",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "New York/New Jersey",
-      "venue": "MetLife Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Argentina",
-        "code": "ARG",
-        "flag": "🇦🇷",
-        "confederation": "CONMEBOL"
-      },
-      "awayTeam": {
-        "name": "Denmark",
-        "code": "DEN",
-        "flag": "🇩🇰",
-        "confederation": "UEFA"
-      }
-    },
-    {
-      "id": 20,
-      "stage": "Group D",
-      "group": "D",
-      "matchday": 1,
-      "date": "2026-06-14",
-      "time": "18:00",
-      "timezone": "ET",
-      "city": "Atlanta",
-      "venue": "Mercedes-Benz Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Iran",
-        "code": "IRN",
-        "flag": "🇮🇷",
-        "confederation": "AFC"
-      },
-      "awayTeam": {
-        "name": "Nigeria",
-        "code": "NGA",
-        "flag": "🇳🇬",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 21,
-      "stage": "Group D",
-      "group": "D",
-      "matchday": 2,
-      "date": "2026-06-20",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Los Angeles",
-      "venue": "SoFi Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Argentina",
-        "code": "ARG",
-        "flag": "🇦🇷",
-        "confederation": "CONMEBOL"
-      },
-      "awayTeam": {
-        "name": "Iran",
-        "code": "IRN",
-        "flag": "🇮🇷",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 22,
-      "stage": "Group D",
-      "group": "D",
-      "matchday": 2,
-      "date": "2026-06-20",
-      "time": "21:00",
+      "time": "13:00",
       "timezone": "ET",
       "city": "Boston",
       "venue": "Gillette Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "Denmark",
-        "code": "DEN",
-        "flag": "🇩🇰",
+        "name": "England",
+        "code": "ENG",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Nigeria",
-        "code": "NGA",
-        "flag": "🇳🇬",
+        "name": "Scotland",
+        "code": "SCO",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "confederation": "UEFA"
+      }
+    },
+    {
+      "id": 10,
+      "stage": "Group C",
+      "group": "C",
+      "matchday": 1,
+      "date": "2026-06-13",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Toronto",
+      "venue": "BMO Field",
+      "country": "Canada",
+      "homeTeam": {
+        "name": "Canada",
+        "code": "CAN",
+        "flag": "🇨🇦",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "Croatia",
+        "code": "CRO",
+        "flag": "🇭🇷",
+        "confederation": "UEFA"
+      }
+    },
+    {
+      "id": 11,
+      "stage": "Group I",
+      "group": "I",
+      "matchday": 1,
+      "date": "2026-06-13",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Atlanta",
+      "venue": "Mercedes-Benz Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Panama",
+        "code": "PAN",
+        "flag": "🇵🇦",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "Uruguay",
+        "code": "URU",
+        "flag": "🇺🇾",
+        "confederation": "CONMEBOL"
+      }
+    },
+    {
+      "id": 12,
+      "stage": "Group C",
+      "group": "C",
+      "matchday": 1,
+      "date": "2026-06-13",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Monterrey",
+      "venue": "Estadio BBVA",
+      "country": "Mexico",
+      "homeTeam": {
+        "name": "Australia",
+        "code": "AUS",
+        "flag": "🇦🇺",
+        "confederation": "AFC"
+      },
+      "awayTeam": {
+        "name": "Senegal",
+        "code": "SEN",
+        "flag": "🇸🇳",
         "confederation": "CAF"
       }
     },
     {
-      "id": 23,
+      "id": 13,
+      "stage": "Group J",
+      "group": "J",
+      "matchday": 1,
+      "date": "2026-06-14",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "San Francisco Bay Area",
+      "venue": "Levi's Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Netherlands",
+        "code": "NED",
+        "flag": "🇳🇱",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Czech Republic",
+        "code": "CZE",
+        "flag": "🇨🇿",
+        "confederation": "UEFA"
+      }
+    },
+    {
+      "id": 14,
       "stage": "Group D",
       "group": "D",
-      "matchday": 3,
-      "date": "2026-06-24",
-      "time": "15:00",
+      "matchday": 1,
+      "date": "2026-06-14",
+      "time": "16:00",
       "timezone": "ET",
       "city": "New York/New Jersey",
       "venue": "MetLife Stadium",
@@ -853,28 +637,52 @@
         "confederation": "CONMEBOL"
       },
       "awayTeam": {
-        "name": "Nigeria",
-        "code": "NGA",
-        "flag": "🇳🇬",
+        "name": "Denmark",
+        "code": "DEN",
+        "flag": "🇩🇰",
+        "confederation": "UEFA"
+      }
+    },
+    {
+      "id": 15,
+      "stage": "Group J",
+      "group": "J",
+      "matchday": 1,
+      "date": "2026-06-14",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Philadelphia",
+      "venue": "Lincoln Financial Field",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Honduras",
+        "code": "HON",
+        "flag": "🇭🇳",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "Morocco",
+        "code": "MAR",
+        "flag": "🇲🇦",
         "confederation": "CAF"
       }
     },
     {
-      "id": 24,
+      "id": 16,
       "stage": "Group D",
       "group": "D",
-      "matchday": 3,
-      "date": "2026-06-24",
-      "time": "15:00",
+      "matchday": 1,
+      "date": "2026-06-14",
+      "time": "22:00",
       "timezone": "ET",
       "city": "Atlanta",
       "venue": "Mercedes-Benz Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "Denmark",
-        "code": "DEN",
-        "flag": "🇩🇰",
-        "confederation": "UEFA"
+        "name": "Nigeria",
+        "code": "NGA",
+        "flag": "🇳🇬",
+        "confederation": "CAF"
       },
       "awayTeam": {
         "name": "Iran",
@@ -884,12 +692,36 @@
       }
     },
     {
-      "id": 25,
+      "id": 17,
+      "stage": "Group K",
+      "group": "K",
+      "matchday": 1,
+      "date": "2026-06-15",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "Kansas City",
+      "venue": "Arrowhead Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Belgium",
+        "code": "BEL",
+        "flag": "🇧🇪",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Serbia",
+        "code": "SRB",
+        "flag": "🇷🇸",
+        "confederation": "UEFA"
+      }
+    },
+    {
+      "id": 18,
       "stage": "Group E",
       "group": "E",
       "matchday": 1,
       "date": "2026-06-15",
-      "time": "15:00",
+      "time": "16:00",
       "timezone": "ET",
       "city": "Los Angeles",
       "venue": "SoFi Stadium",
@@ -908,12 +740,36 @@
       }
     },
     {
-      "id": 26,
+      "id": 19,
+      "stage": "Group K",
+      "group": "K",
+      "matchday": 1,
+      "date": "2026-06-15",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Vancouver",
+      "venue": "BC Place",
+      "country": "Canada",
+      "homeTeam": {
+        "name": "Costa Rica",
+        "code": "CRC",
+        "flag": "🇨🇷",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "New Zealand",
+        "code": "NZL",
+        "flag": "🇳🇿",
+        "confederation": "OFC"
+      }
+    },
+    {
+      "id": 20,
       "stage": "Group E",
       "group": "E",
       "matchday": 1,
       "date": "2026-06-15",
-      "time": "18:00",
+      "time": "22:00",
       "timezone": "ET",
       "city": "San Francisco Bay Area",
       "venue": "Levi's Stadium",
@@ -932,132 +788,84 @@
       }
     },
     {
-      "id": 27,
-      "stage": "Group E",
-      "group": "E",
-      "matchday": 2,
-      "date": "2026-06-21",
-      "time": "15:00",
+      "id": 21,
+      "stage": "Group L",
+      "group": "L",
+      "matchday": 1,
+      "date": "2026-06-16",
+      "time": "13:00",
       "timezone": "ET",
-      "city": "Seattle",
-      "venue": "Lumen Field",
-      "country": "USA",
+      "city": "Guadalajara",
+      "venue": "Estadio Akron",
+      "country": "Mexico",
       "homeTeam": {
-        "name": "Brazil",
-        "code": "BRA",
-        "flag": "🇧🇷",
-        "confederation": "CONMEBOL"
+        "name": "Portugal",
+        "code": "POR",
+        "flag": "🇵🇹",
+        "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Saudi Arabia",
-        "code": "KSA",
-        "flag": "🇸🇦",
-        "confederation": "AFC"
+        "name": "Italy",
+        "code": "ITA",
+        "flag": "🇮🇹",
+        "confederation": "UEFA"
       }
     },
     {
-      "id": 28,
-      "stage": "Group E",
-      "group": "E",
-      "matchday": 2,
-      "date": "2026-06-21",
-      "time": "21:00",
+      "id": 22,
+      "stage": "Group F",
+      "group": "F",
+      "matchday": 1,
+      "date": "2026-06-16",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Miami",
+      "venue": "Hard Rock Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Spain",
+        "code": "ESP",
+        "flag": "🇪🇸",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Paraguay",
+        "code": "PAR",
+        "flag": "🇵🇾",
+        "confederation": "CONMEBOL"
+      }
+    },
+    {
+      "id": 23,
+      "stage": "Group L",
+      "group": "L",
+      "matchday": 1,
+      "date": "2026-06-16",
+      "time": "19:00",
       "timezone": "ET",
       "city": "Houston",
       "venue": "NRG Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "Austria",
-        "code": "AUT",
-        "flag": "🇦🇹",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "South Africa",
-        "code": "RSA",
-        "flag": "🇿🇦",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 29,
-      "stage": "Group E",
-      "group": "E",
-      "matchday": 3,
-      "date": "2026-06-25",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Los Angeles",
-      "venue": "SoFi Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Brazil",
-        "code": "BRA",
-        "flag": "🇧🇷",
-        "confederation": "CONMEBOL"
-      },
-      "awayTeam": {
-        "name": "South Africa",
-        "code": "RSA",
-        "flag": "🇿🇦",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 30,
-      "stage": "Group E",
-      "group": "E",
-      "matchday": 3,
-      "date": "2026-06-25",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "San Francisco Bay Area",
-      "venue": "Levi's Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Austria",
-        "code": "AUT",
-        "flag": "🇦🇹",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Saudi Arabia",
-        "code": "KSA",
-        "flag": "🇸🇦",
+        "name": "Indonesia",
+        "code": "IDN",
+        "flag": "🇮🇩",
         "confederation": "AFC"
-      }
-    },
-    {
-      "id": 31,
-      "stage": "Group F",
-      "group": "F",
-      "matchday": 1,
-      "date": "2026-06-16",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Miami",
-      "venue": "Hard Rock Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Spain",
-        "code": "ESP",
-        "flag": "🇪🇸",
-        "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Paraguay",
-        "code": "PAR",
-        "flag": "🇵🇾",
+        "name": "Venezuela",
+        "code": "VEN",
+        "flag": "🇻🇪",
         "confederation": "CONMEBOL"
       }
     },
     {
-      "id": 32,
+      "id": 24,
       "stage": "Group F",
       "group": "F",
       "matchday": 1,
       "date": "2026-06-16",
-      "time": "18:00",
+      "time": "22:00",
       "timezone": "ET",
       "city": "Dallas",
       "venue": "AT&T Stadium",
@@ -1076,156 +884,12 @@
       }
     },
     {
-      "id": 33,
-      "stage": "Group F",
-      "group": "F",
-      "matchday": 2,
-      "date": "2026-06-22",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Miami",
-      "venue": "Hard Rock Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Spain",
-        "code": "ESP",
-        "flag": "🇪🇸",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Qatar",
-        "code": "QAT",
-        "flag": "🇶🇦",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 34,
-      "stage": "Group F",
-      "group": "F",
-      "matchday": 2,
-      "date": "2026-06-22",
-      "time": "21:00",
-      "timezone": "ET",
-      "city": "Kansas City",
-      "venue": "Arrowhead Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Paraguay",
-        "code": "PAR",
-        "flag": "🇵🇾",
-        "confederation": "CONMEBOL"
-      },
-      "awayTeam": {
-        "name": "Cameroon",
-        "code": "CMR",
-        "flag": "🇨🇲",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 35,
-      "stage": "Group F",
-      "group": "F",
-      "matchday": 3,
-      "date": "2026-06-25",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Dallas",
-      "venue": "AT&T Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Spain",
-        "code": "ESP",
-        "flag": "🇪🇸",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Cameroon",
-        "code": "CMR",
-        "flag": "🇨🇲",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 36,
-      "stage": "Group F",
-      "group": "F",
-      "matchday": 3,
-      "date": "2026-06-25",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Kansas City",
-      "venue": "Arrowhead Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Paraguay",
-        "code": "PAR",
-        "flag": "🇵🇾",
-        "confederation": "CONMEBOL"
-      },
-      "awayTeam": {
-        "name": "Qatar",
-        "code": "QAT",
-        "flag": "🇶🇦",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 37,
-      "stage": "Group G",
-      "group": "G",
-      "matchday": 1,
-      "date": "2026-06-11",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Atlanta",
-      "venue": "Mercedes-Benz Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "France",
-        "code": "FRA",
-        "flag": "🇫🇷",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Ecuador",
-        "code": "ECU",
-        "flag": "🇪🇨",
-        "confederation": "CONMEBOL"
-      }
-    },
-    {
-      "id": 38,
-      "stage": "Group G",
-      "group": "G",
-      "matchday": 1,
-      "date": "2026-06-11",
-      "time": "18:00",
-      "timezone": "ET",
-      "city": "New York/New Jersey",
-      "venue": "MetLife Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Iraq",
-        "code": "IRQ",
-        "flag": "🇮🇶",
-        "confederation": "AFC"
-      },
-      "awayTeam": {
-        "name": "Algeria",
-        "code": "ALG",
-        "flag": "🇩🇿",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 39,
+      "id": 25,
       "stage": "Group G",
       "group": "G",
       "matchday": 2,
       "date": "2026-06-17",
-      "time": "15:00",
+      "time": "13:00",
       "timezone": "ET",
       "city": "Philadelphia",
       "venue": "Lincoln Financial Field",
@@ -1244,12 +908,36 @@
       }
     },
     {
-      "id": 40,
+      "id": 26,
+      "stage": "Group A",
+      "group": "A",
+      "matchday": 2,
+      "date": "2026-06-17",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Guadalajara",
+      "venue": "Estadio Akron",
+      "country": "Mexico",
+      "homeTeam": {
+        "name": "Mexico",
+        "code": "MEX",
+        "flag": "🇲🇽",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "South Korea",
+        "code": "KOR",
+        "flag": "🇰🇷",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 27,
       "stage": "Group G",
       "group": "G",
       "matchday": 2,
       "date": "2026-06-17",
-      "time": "21:00",
+      "time": "19:00",
       "timezone": "ET",
       "city": "Los Angeles",
       "venue": "SoFi Stadium",
@@ -1268,60 +956,36 @@
       }
     },
     {
-      "id": 41,
-      "stage": "Group G",
-      "group": "G",
-      "matchday": 3,
-      "date": "2026-06-26",
-      "time": "15:00",
+      "id": 28,
+      "stage": "Group A",
+      "group": "A",
+      "matchday": 2,
+      "date": "2026-06-17",
+      "time": "22:00",
       "timezone": "ET",
-      "city": "Atlanta",
-      "venue": "Mercedes-Benz Stadium",
+      "city": "Dallas",
+      "venue": "AT&T Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "France",
-        "code": "FRA",
-        "flag": "🇫🇷",
+        "name": "Poland",
+        "code": "POL",
+        "flag": "🇵🇱",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Algeria",
-        "code": "ALG",
-        "flag": "🇩🇿",
+        "name": "Ivory Coast",
+        "code": "CIV",
+        "flag": "🇨🇮",
         "confederation": "CAF"
       }
     },
     {
-      "id": 42,
-      "stage": "Group G",
-      "group": "G",
-      "matchday": 3,
-      "date": "2026-06-26",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "New York/New Jersey",
-      "venue": "MetLife Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Ecuador",
-        "code": "ECU",
-        "flag": "🇪🇨",
-        "confederation": "CONMEBOL"
-      },
-      "awayTeam": {
-        "name": "Iraq",
-        "code": "IRQ",
-        "flag": "🇮🇶",
-        "confederation": "AFC"
-      }
-    },
-    {
-      "id": 43,
+      "id": 29,
       "stage": "Group H",
       "group": "H",
-      "matchday": 1,
-      "date": "2026-06-12",
-      "time": "15:00",
+      "matchday": 2,
+      "date": "2026-06-18",
+      "time": "13:00",
       "timezone": "ET",
       "city": "Dallas",
       "venue": "AT&T Stadium",
@@ -1333,54 +997,6 @@
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Colombia",
-        "code": "COL",
-        "flag": "🇨🇴",
-        "confederation": "CONMEBOL"
-      }
-    },
-    {
-      "id": 44,
-      "stage": "Group H",
-      "group": "H",
-      "matchday": 1,
-      "date": "2026-06-12",
-      "time": "18:00",
-      "timezone": "ET",
-      "city": "Seattle",
-      "venue": "Lumen Field",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Jordan",
-        "code": "JOR",
-        "flag": "🇯🇴",
-        "confederation": "AFC"
-      },
-      "awayTeam": {
-        "name": "Tunisia",
-        "code": "TUN",
-        "flag": "🇹🇳",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 45,
-      "stage": "Group H",
-      "group": "H",
-      "matchday": 2,
-      "date": "2026-06-18",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "San Francisco Bay Area",
-      "venue": "Levi's Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Germany",
-        "code": "GER",
-        "flag": "🇩🇪",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
         "name": "Jordan",
         "code": "JOR",
         "flag": "🇯🇴",
@@ -1388,12 +1004,12 @@
       }
     },
     {
-      "id": 46,
+      "id": 30,
       "stage": "Group H",
       "group": "H",
       "matchday": 2,
       "date": "2026-06-18",
-      "time": "21:00",
+      "time": "16:00",
       "timezone": "ET",
       "city": "Houston",
       "venue": "NRG Stadium",
@@ -1412,60 +1028,444 @@
       }
     },
     {
-      "id": 47,
-      "stage": "Group H",
-      "group": "H",
-      "matchday": 3,
-      "date": "2026-06-26",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Dallas",
-      "venue": "AT&T Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Germany",
-        "code": "GER",
-        "flag": "🇩🇪",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Tunisia",
-        "code": "TUN",
-        "flag": "🇹🇳",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 48,
-      "stage": "Group H",
-      "group": "H",
-      "matchday": 3,
-      "date": "2026-06-26",
-      "time": "15:00",
+      "id": 31,
+      "stage": "Group B",
+      "group": "B",
+      "matchday": 2,
+      "date": "2026-06-18",
+      "time": "19:00",
       "timezone": "ET",
       "city": "Seattle",
       "venue": "Lumen Field",
       "country": "USA",
       "homeTeam": {
-        "name": "Colombia",
-        "code": "COL",
-        "flag": "🇨🇴",
+        "name": "USA",
+        "code": "USA",
+        "flag": "🇺🇸",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "Japan",
+        "code": "JPN",
+        "flag": "🇯🇵",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 32,
+      "stage": "Group B",
+      "group": "B",
+      "matchday": 2,
+      "date": "2026-06-18",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "San Francisco Bay Area",
+      "venue": "Levi's Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Switzerland",
+        "code": "SUI",
+        "flag": "🇨🇭",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Egypt",
+        "code": "EGY",
+        "flag": "🇪🇬",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 33,
+      "stage": "Group I",
+      "group": "I",
+      "matchday": 2,
+      "date": "2026-06-19",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "New York/New Jersey",
+      "venue": "MetLife Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "England",
+        "code": "ENG",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Panama",
+        "code": "PAN",
+        "flag": "🇵🇦",
+        "confederation": "CONCACAF"
+      }
+    },
+    {
+      "id": 34,
+      "stage": "Group I",
+      "group": "I",
+      "matchday": 2,
+      "date": "2026-06-19",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Dallas",
+      "venue": "AT&T Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Scotland",
+        "code": "SCO",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Uruguay",
+        "code": "URU",
+        "flag": "🇺🇾",
+        "confederation": "CONMEBOL"
+      }
+    },
+    {
+      "id": 35,
+      "stage": "Group C",
+      "group": "C",
+      "matchday": 2,
+      "date": "2026-06-19",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Vancouver",
+      "venue": "BC Place",
+      "country": "Canada",
+      "homeTeam": {
+        "name": "Canada",
+        "code": "CAN",
+        "flag": "🇨🇦",
+        "confederation": "CONCACAF"
+      },
+      "awayTeam": {
+        "name": "Australia",
+        "code": "AUS",
+        "flag": "🇦🇺",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 36,
+      "stage": "Group C",
+      "group": "C",
+      "matchday": 2,
+      "date": "2026-06-19",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Monterrey",
+      "venue": "Estadio BBVA",
+      "country": "Mexico",
+      "homeTeam": {
+        "name": "Croatia",
+        "code": "CRO",
+        "flag": "🇭🇷",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Senegal",
+        "code": "SEN",
+        "flag": "🇸🇳",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 37,
+      "stage": "Group J",
+      "group": "J",
+      "matchday": 2,
+      "date": "2026-06-20",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "Toronto",
+      "venue": "BMO Field",
+      "country": "Canada",
+      "homeTeam": {
+        "name": "Netherlands",
+        "code": "NED",
+        "flag": "🇳🇱",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Honduras",
+        "code": "HON",
+        "flag": "🇭🇳",
+        "confederation": "CONCACAF"
+      }
+    },
+    {
+      "id": 38,
+      "stage": "Group J",
+      "group": "J",
+      "matchday": 2,
+      "date": "2026-06-20",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Houston",
+      "venue": "NRG Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Czech Republic",
+        "code": "CZE",
+        "flag": "🇨🇿",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Morocco",
+        "code": "MAR",
+        "flag": "🇲🇦",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 39,
+      "stage": "Group D",
+      "group": "D",
+      "matchday": 2,
+      "date": "2026-06-20",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Los Angeles",
+      "venue": "SoFi Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Argentina",
+        "code": "ARG",
+        "flag": "🇦🇷",
         "confederation": "CONMEBOL"
       },
       "awayTeam": {
-        "name": "Jordan",
-        "code": "JOR",
-        "flag": "🇯🇴",
+        "name": "Nigeria",
+        "code": "NGA",
+        "flag": "🇳🇬",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 40,
+      "stage": "Group D",
+      "group": "D",
+      "matchday": 2,
+      "date": "2026-06-20",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Boston",
+      "venue": "Gillette Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Denmark",
+        "code": "DEN",
+        "flag": "🇩🇰",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Iran",
+        "code": "IRN",
+        "flag": "🇮🇷",
         "confederation": "AFC"
+      }
+    },
+    {
+      "id": 41,
+      "stage": "Group K",
+      "group": "K",
+      "matchday": 2,
+      "date": "2026-06-21",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "Miami",
+      "venue": "Hard Rock Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Belgium",
+        "code": "BEL",
+        "flag": "🇧🇪",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Costa Rica",
+        "code": "CRC",
+        "flag": "🇨🇷",
+        "confederation": "CONCACAF"
+      }
+    },
+    {
+      "id": 42,
+      "stage": "Group K",
+      "group": "K",
+      "matchday": 2,
+      "date": "2026-06-21",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Kansas City",
+      "venue": "Arrowhead Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Serbia",
+        "code": "SRB",
+        "flag": "🇷🇸",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "New Zealand",
+        "code": "NZL",
+        "flag": "🇳🇿",
+        "confederation": "OFC"
+      }
+    },
+    {
+      "id": 43,
+      "stage": "Group E",
+      "group": "E",
+      "matchday": 2,
+      "date": "2026-06-21",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Seattle",
+      "venue": "Lumen Field",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Brazil",
+        "code": "BRA",
+        "flag": "🇧🇷",
+        "confederation": "CONMEBOL"
+      },
+      "awayTeam": {
+        "name": "Saudi Arabia",
+        "code": "KSA",
+        "flag": "🇸🇦",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 44,
+      "stage": "Group E",
+      "group": "E",
+      "matchday": 2,
+      "date": "2026-06-21",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Houston",
+      "venue": "NRG Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Austria",
+        "code": "AUT",
+        "flag": "🇦🇹",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "South Africa",
+        "code": "RSA",
+        "flag": "🇿🇦",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 45,
+      "stage": "Group L",
+      "group": "L",
+      "matchday": 2,
+      "date": "2026-06-22",
+      "time": "13:00",
+      "timezone": "ET",
+      "city": "Monterrey",
+      "venue": "Estadio BBVA",
+      "country": "Mexico",
+      "homeTeam": {
+        "name": "Portugal",
+        "code": "POR",
+        "flag": "🇵🇹",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Indonesia",
+        "code": "IDN",
+        "flag": "🇮🇩",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 46,
+      "stage": "Group L",
+      "group": "L",
+      "matchday": 2,
+      "date": "2026-06-22",
+      "time": "16:00",
+      "timezone": "ET",
+      "city": "Philadelphia",
+      "venue": "Lincoln Financial Field",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Italy",
+        "code": "ITA",
+        "flag": "🇮🇹",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Venezuela",
+        "code": "VEN",
+        "flag": "🇻🇪",
+        "confederation": "CONMEBOL"
+      }
+    },
+    {
+      "id": 47,
+      "stage": "Group F",
+      "group": "F",
+      "matchday": 2,
+      "date": "2026-06-22",
+      "time": "19:00",
+      "timezone": "ET",
+      "city": "Miami",
+      "venue": "Hard Rock Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Spain",
+        "code": "ESP",
+        "flag": "🇪🇸",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Qatar",
+        "code": "QAT",
+        "flag": "🇶🇦",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 48,
+      "stage": "Group F",
+      "group": "F",
+      "matchday": 2,
+      "date": "2026-06-22",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Kansas City",
+      "venue": "Arrowhead Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Paraguay",
+        "code": "PAR",
+        "flag": "🇵🇾",
+        "confederation": "CONMEBOL"
+      },
+      "awayTeam": {
+        "name": "Cameroon",
+        "code": "CMR",
+        "flag": "🇨🇲",
+        "confederation": "CAF"
       }
     },
     {
       "id": 49,
       "stage": "Group I",
       "group": "I",
-      "matchday": 1,
-      "date": "2026-06-13",
-      "time": "15:00",
+      "matchday": 3,
+      "date": "2026-06-23",
+      "time": "14:00",
       "timezone": "ET",
       "city": "Boston",
       "venue": "Gillette Stadium",
@@ -1477,235 +1477,187 @@
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Scotland",
-        "code": "SCO",
-        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-        "confederation": "UEFA"
+        "name": "Uruguay",
+        "code": "URU",
+        "flag": "🇺🇾",
+        "confederation": "CONMEBOL"
       }
     },
     {
       "id": 50,
       "stage": "Group I",
       "group": "I",
-      "matchday": 1,
-      "date": "2026-06-13",
-      "time": "18:00",
+      "matchday": 3,
+      "date": "2026-06-23",
+      "time": "14:00",
       "timezone": "ET",
       "city": "Atlanta",
       "venue": "Mercedes-Benz Stadium",
       "country": "USA",
       "homeTeam": {
+        "name": "Scotland",
+        "code": "SCO",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
         "name": "Panama",
         "code": "PAN",
         "flag": "🇵🇦",
         "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "Uruguay",
-        "code": "URU",
-        "flag": "🇺🇾",
-        "confederation": "CONMEBOL"
       }
     },
     {
       "id": 51,
-      "stage": "Group I",
-      "group": "I",
-      "matchday": 2,
-      "date": "2026-06-19",
-      "time": "15:00",
+      "stage": "Group B",
+      "group": "B",
+      "matchday": 3,
+      "date": "2026-06-23",
+      "time": "18:00",
       "timezone": "ET",
       "city": "New York/New Jersey",
       "venue": "MetLife Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "England",
-        "code": "ENG",
-        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-        "confederation": "UEFA"
+        "name": "USA",
+        "code": "USA",
+        "flag": "🇺🇸",
+        "confederation": "CONCACAF"
       },
       "awayTeam": {
-        "name": "Panama",
-        "code": "PAN",
-        "flag": "🇵🇦",
-        "confederation": "CONCACAF"
+        "name": "Egypt",
+        "code": "EGY",
+        "flag": "🇪🇬",
+        "confederation": "CAF"
       }
     },
     {
       "id": 52,
-      "stage": "Group I",
-      "group": "I",
-      "matchday": 2,
-      "date": "2026-06-19",
-      "time": "21:00",
+      "stage": "Group B",
+      "group": "B",
+      "matchday": 3,
+      "date": "2026-06-23",
+      "time": "18:00",
       "timezone": "ET",
-      "city": "Dallas",
-      "venue": "AT&T Stadium",
+      "city": "Miami",
+      "venue": "Hard Rock Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "Scotland",
-        "code": "SCO",
-        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "name": "Switzerland",
+        "code": "SUI",
+        "flag": "🇨🇭",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Uruguay",
-        "code": "URU",
-        "flag": "🇺🇾",
-        "confederation": "CONMEBOL"
+        "name": "Japan",
+        "code": "JPN",
+        "flag": "🇯🇵",
+        "confederation": "AFC"
       }
     },
     {
       "id": 53,
-      "stage": "Group I",
-      "group": "I",
+      "stage": "Group A",
+      "group": "A",
       "matchday": 3,
       "date": "2026-06-23",
-      "time": "15:00",
+      "time": "22:00",
       "timezone": "ET",
-      "city": "Boston",
-      "venue": "Gillette Stadium",
-      "country": "USA",
+      "city": "Mexico City",
+      "venue": "Estadio Azteca",
+      "country": "Mexico",
       "homeTeam": {
-        "name": "England",
-        "code": "ENG",
-        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-        "confederation": "UEFA"
+        "name": "Mexico",
+        "code": "MEX",
+        "flag": "🇲🇽",
+        "confederation": "CONCACAF"
       },
       "awayTeam": {
-        "name": "Uruguay",
-        "code": "URU",
-        "flag": "🇺🇾",
-        "confederation": "CONMEBOL"
+        "name": "Ivory Coast",
+        "code": "CIV",
+        "flag": "🇨🇮",
+        "confederation": "CAF"
       }
     },
     {
       "id": 54,
-      "stage": "Group I",
-      "group": "I",
+      "stage": "Group A",
+      "group": "A",
       "matchday": 3,
       "date": "2026-06-23",
-      "time": "15:00",
+      "time": "22:00",
       "timezone": "ET",
-      "city": "Atlanta",
-      "venue": "Mercedes-Benz Stadium",
-      "country": "USA",
+      "city": "Guadalajara",
+      "venue": "Estadio Akron",
+      "country": "Mexico",
       "homeTeam": {
-        "name": "Scotland",
-        "code": "SCO",
-        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "name": "Poland",
+        "code": "POL",
+        "flag": "🇵🇱",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Panama",
-        "code": "PAN",
-        "flag": "🇵🇦",
-        "confederation": "CONCACAF"
+        "name": "South Korea",
+        "code": "KOR",
+        "flag": "🇰🇷",
+        "confederation": "AFC"
       }
     },
     {
       "id": 55,
-      "stage": "Group J",
-      "group": "J",
-      "matchday": 1,
-      "date": "2026-06-14",
-      "time": "15:00",
+      "stage": "Group C",
+      "group": "C",
+      "matchday": 3,
+      "date": "2026-06-24",
+      "time": "14:00",
       "timezone": "ET",
-      "city": "San Francisco Bay Area",
-      "venue": "Levi's Stadium",
-      "country": "USA",
+      "city": "Toronto",
+      "venue": "BMO Field",
+      "country": "Canada",
       "homeTeam": {
-        "name": "Netherlands",
-        "code": "NED",
-        "flag": "🇳🇱",
-        "confederation": "UEFA"
+        "name": "Canada",
+        "code": "CAN",
+        "flag": "🇨🇦",
+        "confederation": "CONCACAF"
       },
       "awayTeam": {
-        "name": "Czech Republic",
-        "code": "CZE",
-        "flag": "🇨🇿",
-        "confederation": "UEFA"
+        "name": "Senegal",
+        "code": "SEN",
+        "flag": "🇸🇳",
+        "confederation": "CAF"
       }
     },
     {
       "id": 56,
-      "stage": "Group J",
-      "group": "J",
-      "matchday": 1,
-      "date": "2026-06-14",
-      "time": "18:00",
+      "stage": "Group C",
+      "group": "C",
+      "matchday": 3,
+      "date": "2026-06-24",
+      "time": "14:00",
       "timezone": "ET",
-      "city": "Philadelphia",
-      "venue": "Lincoln Financial Field",
-      "country": "USA",
+      "city": "Vancouver",
+      "venue": "BC Place",
+      "country": "Canada",
       "homeTeam": {
-        "name": "Honduras",
-        "code": "HON",
-        "flag": "🇭🇳",
-        "confederation": "CONCACAF"
+        "name": "Croatia",
+        "code": "CRO",
+        "flag": "🇭🇷",
+        "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Morocco",
-        "code": "MAR",
-        "flag": "🇲🇦",
-        "confederation": "CAF"
+        "name": "Australia",
+        "code": "AUS",
+        "flag": "🇦🇺",
+        "confederation": "AFC"
       }
     },
     {
       "id": 57,
       "stage": "Group J",
       "group": "J",
-      "matchday": 2,
-      "date": "2026-06-20",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Toronto",
-      "venue": "BMO Field",
-      "country": "Canada",
-      "homeTeam": {
-        "name": "Netherlands",
-        "code": "NED",
-        "flag": "🇳🇱",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Honduras",
-        "code": "HON",
-        "flag": "🇭🇳",
-        "confederation": "CONCACAF"
-      }
-    },
-    {
-      "id": 58,
-      "stage": "Group J",
-      "group": "J",
-      "matchday": 2,
-      "date": "2026-06-20",
-      "time": "21:00",
-      "timezone": "ET",
-      "city": "Los Angeles",
-      "venue": "SoFi Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Czech Republic",
-        "code": "CZE",
-        "flag": "🇨🇿",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "Morocco",
-        "code": "MAR",
-        "flag": "🇲🇦",
-        "confederation": "CAF"
-      }
-    },
-    {
-      "id": 59,
-      "stage": "Group J",
-      "group": "J",
       "matchday": 3,
       "date": "2026-06-24",
-      "time": "15:00",
+      "time": "18:00",
       "timezone": "ET",
       "city": "San Francisco Bay Area",
       "venue": "Levi's Stadium",
@@ -1724,12 +1676,12 @@
       }
     },
     {
-      "id": 60,
+      "id": 58,
       "stage": "Group J",
       "group": "J",
       "matchday": 3,
       "date": "2026-06-24",
-      "time": "15:00",
+      "time": "18:00",
       "timezone": "ET",
       "city": "Philadelphia",
       "venue": "Lincoln Financial Field",
@@ -1748,60 +1700,108 @@
       }
     },
     {
+      "id": 59,
+      "stage": "Group D",
+      "group": "D",
+      "matchday": 3,
+      "date": "2026-06-24",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "New York/New Jersey",
+      "venue": "MetLife Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Argentina",
+        "code": "ARG",
+        "flag": "🇦🇷",
+        "confederation": "CONMEBOL"
+      },
+      "awayTeam": {
+        "name": "Iran",
+        "code": "IRN",
+        "flag": "🇮🇷",
+        "confederation": "AFC"
+      }
+    },
+    {
+      "id": 60,
+      "stage": "Group D",
+      "group": "D",
+      "matchday": 3,
+      "date": "2026-06-24",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Atlanta",
+      "venue": "Mercedes-Benz Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Denmark",
+        "code": "DEN",
+        "flag": "🇩🇰",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Nigeria",
+        "code": "NGA",
+        "flag": "🇳🇬",
+        "confederation": "CAF"
+      }
+    },
+    {
       "id": 61,
-      "stage": "Group K",
-      "group": "K",
-      "matchday": 1,
-      "date": "2026-06-15",
-      "time": "15:00",
+      "stage": "Group F",
+      "group": "F",
+      "matchday": 3,
+      "date": "2026-06-25",
+      "time": "14:00",
+      "timezone": "ET",
+      "city": "Dallas",
+      "venue": "AT&T Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Spain",
+        "code": "ESP",
+        "flag": "🇪🇸",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Cameroon",
+        "code": "CMR",
+        "flag": "🇨🇲",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 62,
+      "stage": "Group F",
+      "group": "F",
+      "matchday": 3,
+      "date": "2026-06-25",
+      "time": "14:00",
       "timezone": "ET",
       "city": "Kansas City",
       "venue": "Arrowhead Stadium",
       "country": "USA",
       "homeTeam": {
-        "name": "Belgium",
-        "code": "BEL",
-        "flag": "🇧🇪",
-        "confederation": "UEFA"
+        "name": "Paraguay",
+        "code": "PAR",
+        "flag": "🇵🇾",
+        "confederation": "CONMEBOL"
       },
       "awayTeam": {
-        "name": "Serbia",
-        "code": "SRB",
-        "flag": "🇷🇸",
-        "confederation": "UEFA"
-      }
-    },
-    {
-      "id": 62,
-      "stage": "Group K",
-      "group": "K",
-      "matchday": 1,
-      "date": "2026-06-15",
-      "time": "18:00",
-      "timezone": "ET",
-      "city": "Vancouver",
-      "venue": "BC Place",
-      "country": "Canada",
-      "homeTeam": {
-        "name": "Costa Rica",
-        "code": "CRC",
-        "flag": "🇨🇷",
-        "confederation": "CONCACAF"
-      },
-      "awayTeam": {
-        "name": "New Zealand",
-        "code": "NZL",
-        "flag": "🇳🇿",
-        "confederation": "OFC"
+        "name": "Qatar",
+        "code": "QAT",
+        "flag": "🇶🇦",
+        "confederation": "AFC"
       }
     },
     {
       "id": 63,
       "stage": "Group K",
       "group": "K",
-      "matchday": 2,
-      "date": "2026-06-21",
-      "time": "15:00",
+      "matchday": 3,
+      "date": "2026-06-25",
+      "time": "18:00",
       "timezone": "ET",
       "city": "Miami",
       "venue": "Hard Rock Stadium",
@@ -1813,67 +1813,19 @@
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Costa Rica",
-        "code": "CRC",
-        "flag": "🇨🇷",
-        "confederation": "CONCACAF"
+        "name": "New Zealand",
+        "code": "NZL",
+        "flag": "🇳🇿",
+        "confederation": "OFC"
       }
     },
     {
       "id": 64,
       "stage": "Group K",
       "group": "K",
-      "matchday": 2,
-      "date": "2026-06-21",
-      "time": "21:00",
-      "timezone": "ET",
-      "city": "Seattle",
-      "venue": "Lumen Field",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Serbia",
-        "code": "SRB",
-        "flag": "🇷🇸",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "New Zealand",
-        "code": "NZL",
-        "flag": "🇳🇿",
-        "confederation": "OFC"
-      }
-    },
-    {
-      "id": 65,
-      "stage": "Group K",
-      "group": "K",
       "matchday": 3,
       "date": "2026-06-25",
-      "time": "15:00",
-      "timezone": "ET",
-      "city": "Kansas City",
-      "venue": "Arrowhead Stadium",
-      "country": "USA",
-      "homeTeam": {
-        "name": "Belgium",
-        "code": "BEL",
-        "flag": "🇧🇪",
-        "confederation": "UEFA"
-      },
-      "awayTeam": {
-        "name": "New Zealand",
-        "code": "NZL",
-        "flag": "🇳🇿",
-        "confederation": "OFC"
-      }
-    },
-    {
-      "id": 66,
-      "stage": "Group K",
-      "group": "K",
-      "matchday": 3,
-      "date": "2026-06-25",
-      "time": "15:00",
+      "time": "18:00",
       "timezone": "ET",
       "city": "Vancouver",
       "venue": "BC Place",
@@ -1892,12 +1844,60 @@
       }
     },
     {
+      "id": 65,
+      "stage": "Group E",
+      "group": "E",
+      "matchday": 3,
+      "date": "2026-06-25",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "Los Angeles",
+      "venue": "SoFi Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Brazil",
+        "code": "BRA",
+        "flag": "🇧🇷",
+        "confederation": "CONMEBOL"
+      },
+      "awayTeam": {
+        "name": "South Africa",
+        "code": "RSA",
+        "flag": "🇿🇦",
+        "confederation": "CAF"
+      }
+    },
+    {
+      "id": 66,
+      "stage": "Group E",
+      "group": "E",
+      "matchday": 3,
+      "date": "2026-06-25",
+      "time": "22:00",
+      "timezone": "ET",
+      "city": "San Francisco Bay Area",
+      "venue": "Levi's Stadium",
+      "country": "USA",
+      "homeTeam": {
+        "name": "Austria",
+        "code": "AUT",
+        "flag": "🇦🇹",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
+        "name": "Saudi Arabia",
+        "code": "KSA",
+        "flag": "🇸🇦",
+        "confederation": "AFC"
+      }
+    },
+    {
       "id": 67,
       "stage": "Group L",
       "group": "L",
-      "matchday": 1,
-      "date": "2026-06-16",
-      "time": "15:00",
+      "matchday": 3,
+      "date": "2026-06-26",
+      "time": "14:00",
       "timezone": "ET",
       "city": "Guadalajara",
       "venue": "Estadio Akron",
@@ -1909,129 +1909,129 @@
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Italy",
-        "code": "ITA",
-        "flag": "🇮🇹",
-        "confederation": "UEFA"
+        "name": "Venezuela",
+        "code": "VEN",
+        "flag": "🇻🇪",
+        "confederation": "CONMEBOL"
       }
     },
     {
       "id": 68,
       "stage": "Group L",
       "group": "L",
-      "matchday": 1,
-      "date": "2026-06-16",
-      "time": "18:00",
+      "matchday": 3,
+      "date": "2026-06-26",
+      "time": "14:00",
       "timezone": "ET",
-      "city": "Houston",
-      "venue": "NRG Stadium",
-      "country": "USA",
+      "city": "Monterrey",
+      "venue": "Estadio BBVA",
+      "country": "Mexico",
       "homeTeam": {
+        "name": "Italy",
+        "code": "ITA",
+        "flag": "🇮🇹",
+        "confederation": "UEFA"
+      },
+      "awayTeam": {
         "name": "Indonesia",
         "code": "IDN",
         "flag": "🇮🇩",
         "confederation": "AFC"
-      },
-      "awayTeam": {
-        "name": "Venezuela",
-        "code": "VEN",
-        "flag": "🇻🇪",
-        "confederation": "CONMEBOL"
       }
     },
     {
       "id": 69,
-      "stage": "Group L",
-      "group": "L",
-      "matchday": 2,
-      "date": "2026-06-22",
-      "time": "15:00",
+      "stage": "Group H",
+      "group": "H",
+      "matchday": 3,
+      "date": "2026-06-26",
+      "time": "18:00",
       "timezone": "ET",
-      "city": "Monterrey",
-      "venue": "Estadio BBVA",
-      "country": "Mexico",
+      "city": "Dallas",
+      "venue": "AT&T Stadium",
+      "country": "USA",
       "homeTeam": {
-        "name": "Portugal",
-        "code": "POR",
-        "flag": "🇵🇹",
+        "name": "Germany",
+        "code": "GER",
+        "flag": "🇩🇪",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Indonesia",
-        "code": "IDN",
-        "flag": "🇮🇩",
-        "confederation": "AFC"
+        "name": "Tunisia",
+        "code": "TUN",
+        "flag": "🇹🇳",
+        "confederation": "CAF"
       }
     },
     {
       "id": 70,
-      "stage": "Group L",
-      "group": "L",
-      "matchday": 2,
-      "date": "2026-06-22",
-      "time": "21:00",
+      "stage": "Group H",
+      "group": "H",
+      "matchday": 3,
+      "date": "2026-06-26",
+      "time": "18:00",
       "timezone": "ET",
-      "city": "Philadelphia",
-      "venue": "Lincoln Financial Field",
+      "city": "Seattle",
+      "venue": "Lumen Field",
       "country": "USA",
       "homeTeam": {
-        "name": "Italy",
-        "code": "ITA",
-        "flag": "🇮🇹",
-        "confederation": "UEFA"
+        "name": "Colombia",
+        "code": "COL",
+        "flag": "🇨🇴",
+        "confederation": "CONMEBOL"
       },
       "awayTeam": {
-        "name": "Venezuela",
-        "code": "VEN",
-        "flag": "🇻🇪",
-        "confederation": "CONMEBOL"
+        "name": "Jordan",
+        "code": "JOR",
+        "flag": "🇯🇴",
+        "confederation": "AFC"
       }
     },
     {
       "id": 71,
-      "stage": "Group L",
-      "group": "L",
+      "stage": "Group G",
+      "group": "G",
       "matchday": 3,
       "date": "2026-06-26",
-      "time": "15:00",
+      "time": "22:00",
       "timezone": "ET",
-      "city": "Guadalajara",
-      "venue": "Estadio Akron",
-      "country": "Mexico",
+      "city": "Atlanta",
+      "venue": "Mercedes-Benz Stadium",
+      "country": "USA",
       "homeTeam": {
-        "name": "Portugal",
-        "code": "POR",
-        "flag": "🇵🇹",
+        "name": "France",
+        "code": "FRA",
+        "flag": "🇫🇷",
         "confederation": "UEFA"
       },
       "awayTeam": {
-        "name": "Venezuela",
-        "code": "VEN",
-        "flag": "🇻🇪",
-        "confederation": "CONMEBOL"
+        "name": "Algeria",
+        "code": "ALG",
+        "flag": "🇩🇿",
+        "confederation": "CAF"
       }
     },
     {
       "id": 72,
-      "stage": "Group L",
-      "group": "L",
+      "stage": "Group G",
+      "group": "G",
       "matchday": 3,
       "date": "2026-06-26",
-      "time": "15:00",
+      "time": "22:00",
       "timezone": "ET",
-      "city": "Monterrey",
-      "venue": "Estadio BBVA",
-      "country": "Mexico",
+      "city": "New York/New Jersey",
+      "venue": "MetLife Stadium",
+      "country": "USA",
       "homeTeam": {
-        "name": "Italy",
-        "code": "ITA",
-        "flag": "🇮🇹",
-        "confederation": "UEFA"
+        "name": "Ecuador",
+        "code": "ECU",
+        "flag": "🇪🇨",
+        "confederation": "CONMEBOL"
       },
       "awayTeam": {
-        "name": "Indonesia",
-        "code": "IDN",
-        "flag": "🇮🇩",
+        "name": "Iraq",
+        "code": "IRQ",
+        "flag": "🇮🇶",
         "confederation": "AFC"
       }
     },

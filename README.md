@@ -62,15 +62,31 @@ npm run data:extract
 ```
 
 This runs `scripts/extract-data.js` which:
-1. Defines all 48 teams and their group assignments
-2. Generates the full schedule (group stage + knockout rounds) with dates, times, and venues
-3. Writes the output to `src/data/fixtures.json`
+1. Reads `data/fixture-mundial-2026-fase-grupos.csv` as the **primary source** for all group-stage match details (date, time, venue, city, matchday)
+2. Combines CSV data with the team/group definitions in `scripts/extract-data.js`
+3. Appends the knockout-round schedule (teams TBD)
+4. Validates: 72 group matches, 4 teams per group, 3 matches per team
+5. Writes the output to `src/data/fixtures.json`
+
+### Data Sources
+
+| Source | What it provides |
+|---|---|
+| `data/fixture-mundial-2026-fase-grupos.csv` | **Primary** – all 72 group-stage matches: date (DD/MM), time (ET), venue, city, home/away team codes |
+| `scripts/extract-data.js` → `groups` object | Team details (full name, flag, confederation) and group assignments |
+| `scripts/extract-data.js` → knockout schedules | Round of 32 through Final (dates, venues; teams TBD) |
+
+**To correct group-stage matches:** Edit `data/fixture-mundial-2026-fase-grupos.csv` and re-run `npm run data:extract`.
 
 **To update teams or groups:** Edit the `groups` object in `scripts/extract-data.js` and re-run the script.
 
 ### Timezone Note
 
-All match times are stored and displayed in **ET (Eastern Time, UTC-4 / EDT** during the June–July tournament window). The app also shows local time by converting from ET using the browser's local timezone.
+All match times in the CSV and in the output JSON are in **ET (Eastern Time, UTC-4 / EDT** during the June–July tournament window). The app also shows the user's local time by converting from ET using the browser's local timezone.
+
+### Venue Normalisation
+
+The script automatically corrects known venue-name typos (e.g. "BC Place Vanvouver" → "BC Place") via the `venueNormalisations` map in `scripts/extract-data.js`. Add new entries there if the CSV contains variant spellings.
 
 ---
 
@@ -80,14 +96,16 @@ All match times are stored and displayed in **ET (Eastern Time, UTC-4 / EDT** du
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions: build & deploy to Pages
+├── data/
+│   └── fixture-mundial-2026-fase-grupos.csv  # PRIMARY: group-stage schedule
 ├── scripts/
-│   └── extract-data.js         # Data generation script
+│   └── extract-data.js         # Data pipeline: CSV → fixtures.json
 ├── src/
 │   ├── components/
 │   │   ├── MatchCard.vue        # Individual match display component
 │   │   └── TeamSearch.vue      # Country autocomplete search
 │   ├── data/
-│   │   └── fixtures.json       # 104-match FIFA 2026 dataset
+│   │   └── fixtures.json       # 104-match FIFA 2026 dataset (generated)
 │   ├── router/
 │   │   └── index.ts            # Vue Router (hash history for GitHub Pages)
 │   ├── types/
@@ -128,7 +146,7 @@ The app uses **hash-based routing** (`createWebHashHistory`) so all routes work 
 The fixture data (`src/data/fixtures.json`) contains:
 
 - **48 teams** across 12 groups (A–L)
-- **72 group stage matches** (June 11–26, 2026)
+- **72 group stage matches** (June 11–26, 2026) — sourced from `data/fixture-mundial-2026-fase-grupos.csv`
 - **16 Round of 32 matches** (June 27 – July 3)
 - **8 Round of 16 matches** (July 4–8)
 - **4 Quarter-finals** (July 9–12)
@@ -138,7 +156,9 @@ The fixture data (`src/data/fixtures.json`) contains:
 
 **Hosts:** Mexico 🇲🇽 · USA 🇺🇸 · Canada 🇨🇦 (16 venues)
 
-> **Note:** Group assignments and some schedule details are based on publicly available FIFA 2026 information. To update with official confirmed data, edit `scripts/extract-data.js` and run `npm run data:extract`.
+> **Updating data:** Group-stage schedule → edit `data/fixture-mundial-2026-fase-grupos.csv`.
+> Team/group assignments → edit the `groups` object in `scripts/extract-data.js`.
+> Then run `npm run data:extract` to regenerate `src/data/fixtures.json`.
 
 ---
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * FIFA 2026 World Cup - Data Extraction Script
+ * FIFA 2026 World Cup – Data Extraction Script
  *
  * PRIMARY DATA SOURCE (single source of truth):
  *   data/fixture_mundial_2026-v2.csv
  *
  * Columns:
  *   Nro_Partido, Fase, Grupo, Ciudad, Fecha (DD/MM/YYYY),
- *   Hora_ET, Hora_ARG, Equipo_1, Equipo_2
+ *   Hora_ET (HH:mm), Hora_ARG (HH:mm or HH:mm*), Equipo_1, Equipo_2
  *
  * Usage:
  *   npm run data:extract
@@ -15,17 +15,17 @@
  * Output:
  *   src/data/fixtures.json
  *
- * Notes:
- *   - All times in the CSV are stored as-is (ET and ARG).
- *   - Hora_ARG values ending in '*' indicate a midnight crossing:
- *     the match occurs at 00:00 of the NEXT day in Argentina.
- *     In that case dateARG is advanced by one day.
- *   - Team fields (Equipo_1, Equipo_2) can be real team codes (e.g. "MEX")
- *     or knockout-stage placeholders (e.g. "1 grado A", "Gan. P73", "Per. P101").
- *   - For real teams (group stage), full team details (name, flag, etc.)
- *     are resolved from the teamDetails map below.
- *   - For placeholder teams the fields are stored verbatim.
- *   - Team search in the UI uses only real teams (no placeholders).
+ * Timezone rules:
+ *   - Hora_ARG is the primary time (Argentina Time, UTC-3, no DST).
+ *   - Hora_ET  is the secondary time (Eastern Time, UTC-4 during June–July).
+ *   - Fecha column represents the Argentina calendar date for every match.
+ *   - 00:00* in Hora_ARG means 00:00 of the SAME day shown in Fecha (no date shift).
+ *     The asterisk is stripped; dateARG stays equal to the parsed Fecha.
+ *
+ * Team handling:
+ *   - Group-stage teams use full Spanish names (e.g. "México", "Argentina").
+ *   - Knockout-stage teams are placeholders (e.g. "1°A", "Gan. P74", "Mejor 3°(...)").
+ *   - Only real (non-placeholder) teams appear in the search index.
  */
 
 import { readFileSync, writeFileSync } from 'fs'
@@ -36,97 +36,113 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // ============================================================
 // TEAM DATA
-// Full details for every real team in the tournament.
-// Keyed by the 3-letter code used in the group-stage CSV rows.
+// Keyed by the exact Spanish name used in the CSV.
 // ============================================================
 const teamDetails = {
-  MEX: { name: "Mexico",         code: "MEX", confederation: "CONCACAF", flag: "🇲🇽", group: "A" },
-  POL: { name: "Poland",         code: "POL", confederation: "UEFA",     flag: "🇵🇱", group: "A" },
-  KOR: { name: "South Korea",    code: "KOR", confederation: "AFC",      flag: "🇰🇷", group: "A" },
-  CIV: { name: "Ivory Coast",    code: "CIV", confederation: "CAF",      flag: "🇨🇮", group: "A" },
-  USA: { name: "USA",            code: "USA", confederation: "CONCACAF", flag: "🇺🇸", group: "B" },
-  SUI: { name: "Switzerland",    code: "SUI", confederation: "UEFA",     flag: "🇨🇭", group: "B" },
-  JPN: { name: "Japan",          code: "JPN", confederation: "AFC",      flag: "🇯🇵", group: "B" },
-  EGY: { name: "Egypt",          code: "EGY", confederation: "CAF",      flag: "🇪🇬", group: "B" },
-  CAN: { name: "Canada",         code: "CAN", confederation: "CONCACAF", flag: "🇨🇦", group: "C" },
-  CRO: { name: "Croatia",        code: "CRO", confederation: "UEFA",     flag: "🇭🇷", group: "C" },
-  AUS: { name: "Australia",      code: "AUS", confederation: "AFC",      flag: "🇦🇺", group: "C" },
-  SEN: { name: "Senegal",        code: "SEN", confederation: "CAF",      flag: "🇸🇳", group: "C" },
-  ARG: { name: "Argentina",      code: "ARG", confederation: "CONMEBOL", flag: "🇦🇷", group: "D" },
-  DEN: { name: "Denmark",        code: "DEN", confederation: "UEFA",     flag: "🇩🇰", group: "D" },
-  IRN: { name: "Iran",           code: "IRN", confederation: "AFC",      flag: "🇮🇷", group: "D" },
-  NGA: { name: "Nigeria",        code: "NGA", confederation: "CAF",      flag: "🇳🇬", group: "D" },
-  BRA: { name: "Brazil",         code: "BRA", confederation: "CONMEBOL", flag: "🇧🇷", group: "E" },
-  AUT: { name: "Austria",        code: "AUT", confederation: "UEFA",     flag: "🇦🇹", group: "E" },
-  KSA: { name: "Saudi Arabia",   code: "KSA", confederation: "AFC",      flag: "🇸🇦", group: "E" },
-  RSA: { name: "South Africa",   code: "RSA", confederation: "CAF",      flag: "🇿🇦", group: "E" },
-  ESP: { name: "Spain",          code: "ESP", confederation: "UEFA",     flag: "🇪🇸", group: "F" },
-  PAR: { name: "Paraguay",       code: "PAR", confederation: "CONMEBOL", flag: "🇵🇾", group: "F" },
-  QAT: { name: "Qatar",          code: "QAT", confederation: "AFC",      flag: "🇶🇦", group: "F" },
-  CMR: { name: "Cameroon",       code: "CMR", confederation: "CAF",      flag: "🇨🇲", group: "F" },
-  FRA: { name: "France",         code: "FRA", confederation: "UEFA",     flag: "🇫🇷", group: "G" },
-  ECU: { name: "Ecuador",        code: "ECU", confederation: "CONMEBOL", flag: "🇪🇨", group: "G" },
-  IRQ: { name: "Iraq",           code: "IRQ", confederation: "AFC",      flag: "🇮🇶", group: "G" },
-  ALG: { name: "Algeria",        code: "ALG", confederation: "CAF",      flag: "🇩🇿", group: "G" },
-  GER: { name: "Germany",        code: "GER", confederation: "UEFA",     flag: "��🇪", group: "H" },
-  COL: { name: "Colombia",       code: "COL", confederation: "CONMEBOL", flag: "🇨🇴", group: "H" },
-  JOR: { name: "Jordan",         code: "JOR", confederation: "AFC",      flag: "🇯🇴", group: "H" },
-  TUN: { name: "Tunisia",        code: "TUN", confederation: "CAF",      flag: "🇹🇳", group: "H" },
-  ENG: { name: "England",        code: "ENG", confederation: "UEFA",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", group: "I" },
-  SCO: { name: "Scotland",       code: "SCO", confederation: "UEFA",     flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", group: "I" },
-  PAN: { name: "Panama",         code: "PAN", confederation: "CONCACAF", flag: "🇵🇦", group: "I" },
-  URU: { name: "Uruguay",        code: "URU", confederation: "CONMEBOL", flag: "🇺🇾", group: "I" },
-  NED: { name: "Netherlands",    code: "NED", confederation: "UEFA",     flag: "🇳🇱", group: "J" },
-  CZE: { name: "Czech Republic", code: "CZE", confederation: "UEFA",     flag: "🇨🇿", group: "J" },
-  HON: { name: "Honduras",       code: "HON", confederation: "CONCACAF", flag: "🇭🇳", group: "J" },
-  MAR: { name: "Morocco",        code: "MAR", confederation: "CAF",      flag: "🇲🇦", group: "J" },
-  BEL: { name: "Belgium",        code: "BEL", confederation: "UEFA",     flag: "🇧🇪", group: "K" },
-  SRB: { name: "Serbia",         code: "SRB", confederation: "UEFA",     flag: "🇷🇸", group: "K" },
-  CRC: { name: "Costa Rica",     code: "CRC", confederation: "CONCACAF", flag: "🇨🇷", group: "K" },
-  NZL: { name: "New Zealand",    code: "NZL", confederation: "OFC",      flag: "🇳🇿", group: "K" },
-  POR: { name: "Portugal",       code: "POR", confederation: "UEFA",     flag: "🇵🇹", group: "L" },
-  ITA: { name: "Italy",          code: "ITA", confederation: "UEFA",     flag: "🇮🇹", group: "L" },
-  IDN: { name: "Indonesia",      code: "IDN", confederation: "AFC",      flag: "🇮🇩", group: "L" },
-  VEN: { name: "Venezuela",      code: "VEN", confederation: "CONMEBOL", flag: "🇻🇪", group: "L" },
+  // Group A
+  "México":               { code: "MEX", flag: "🇲🇽", confederation: "CONCACAF", group: "A" },
+  "Sudáfrica":            { code: "RSA", flag: "🇿🇦", confederation: "CAF",      group: "A" },
+  "Corea del Sur":        { code: "KOR", flag: "🇰🇷", confederation: "AFC",      group: "A" },
+  "Chequia":              { code: "CZE", flag: "🇨🇿", confederation: "UEFA",     group: "A" },
+  // Group B
+  "Canadá":               { code: "CAN", flag: "🇨🇦", confederation: "CONCACAF", group: "B" },
+  "Bosnia y Herzegovina": { code: "BIH", flag: "🇧🇦", confederation: "UEFA",     group: "B" },
+  "Qatar":                { code: "QAT", flag: "🇶🇦", confederation: "AFC",      group: "B" },
+  "Suiza":                { code: "SUI", flag: "🇨🇭", confederation: "UEFA",     group: "B" },
+  // Group C
+  "Brasil":               { code: "BRA", flag: "🇧🇷", confederation: "CONMEBOL", group: "C" },
+  "Marruecos":            { code: "MAR", flag: "🇲🇦", confederation: "CAF",      group: "C" },
+  "Haití":                { code: "HAI", flag: "🇭🇹", confederation: "CONCACAF", group: "C" },
+  "Escocia":              { code: "SCO", flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", confederation: "UEFA",     group: "C" },
+  // Group D
+  "Estados Unidos":       { code: "USA", flag: "🇺🇸", confederation: "CONCACAF", group: "D" },
+  "Paraguay":             { code: "PAR", flag: "🇵🇾", confederation: "CONMEBOL", group: "D" },
+  "Australia":            { code: "AUS", flag: "🇦🇺", confederation: "AFC",      group: "D" },
+  "Turquía":              { code: "TUR", flag: "🇹🇷", confederation: "UEFA",     group: "D" },
+  // Group E
+  "Alemania":             { code: "GER", flag: "🇩🇪", confederation: "UEFA",     group: "E" },
+  "Curazao":              { code: "CUW", flag: "🇨🇼", confederation: "CONCACAF", group: "E" },
+  "Costa de Marfil":      { code: "CIV", flag: "🇨🇮", confederation: "CAF",      group: "E" },
+  "Ecuador":              { code: "ECU", flag: "🇪🇨", confederation: "CONMEBOL", group: "E" },
+  // Group F
+  "Países Bajos":         { code: "NED", flag: "🇳🇱", confederation: "UEFA",     group: "F" },
+  "Japón":                { code: "JPN", flag: "🇯🇵", confederation: "AFC",      group: "F" },
+  "Suecia":               { code: "SWE", flag: "🇸🇪", confederation: "UEFA",     group: "F" },
+  "Túnez":                { code: "TUN", flag: "🇹🇳", confederation: "CAF",      group: "F" },
+  // Group G
+  "Bélgica":              { code: "BEL", flag: "🇧🇪", confederation: "UEFA",     group: "G" },
+  "Egipto":               { code: "EGY", flag: "🇪🇬", confederation: "CAF",      group: "G" },
+  "Irán":                 { code: "IRN", flag: "🇮🇷", confederation: "AFC",      group: "G" },
+  "Nueva Zelanda":        { code: "NZL", flag: "🇳🇿", confederation: "OFC",      group: "G" },
+  // Group H
+  "España":               { code: "ESP", flag: "🇪🇸", confederation: "UEFA",     group: "H" },
+  "Cabo Verde":           { code: "CPV", flag: "🇨🇻", confederation: "CAF",      group: "H" },
+  "Arabia Saudita":       { code: "KSA", flag: "🇸🇦", confederation: "AFC",      group: "H" },
+  "Uruguay":              { code: "URU", flag: "🇺🇾", confederation: "CONMEBOL", group: "H" },
+  // Group I
+  "Francia":              { code: "FRA", flag: "🇫🇷", confederation: "UEFA",     group: "I" },
+  "Senegal":              { code: "SEN", flag: "🇸🇳", confederation: "CAF",      group: "I" },
+  "Irak":                 { code: "IRQ", flag: "🇮🇶", confederation: "AFC",      group: "I" },
+  "Noruega":              { code: "NOR", flag: "🇳🇴", confederation: "UEFA",     group: "I" },
+  // Group J
+  "Argentina":            { code: "ARG", flag: "🇦🇷", confederation: "CONMEBOL", group: "J" },
+  "Argelia":              { code: "ALG", flag: "🇩🇿", confederation: "CAF",      group: "J" },
+  "Austria":              { code: "AUT", flag: "🇦🇹", confederation: "UEFA",     group: "J" },
+  "Jordania":             { code: "JOR", flag: "🇯🇴", confederation: "AFC",      group: "J" },
+  // Group K
+  "Portugal":             { code: "POR", flag: "🇵🇹", confederation: "UEFA",     group: "K" },
+  "Congo DR":             { code: "COD", flag: "🇨🇩", confederation: "CAF",      group: "K" },
+  "Uzbekistán":           { code: "UZB", flag: "🇺🇿", confederation: "AFC",      group: "K" },
+  "Colombia":             { code: "COL", flag: "🇨🇴", confederation: "CONMEBOL", group: "K" },
+  // Group L
+  "Inglaterra":           { code: "ENG", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", confederation: "UEFA",     group: "L" },
+  "Croacia":              { code: "CRO", flag: "🇭🇷", confederation: "UEFA",     group: "L" },
+  "Ghana":                { code: "GHA", flag: "🇬🇭", confederation: "CAF",      group: "L" },
+  "Panamá":               { code: "PAN", flag: "🇵🇦", confederation: "CONCACAF", group: "L" },
 }
 
 // ============================================================
 // HELPERS
 // ============================================================
 
-/** Parse a DD/MM/YYYY date string into an ISO date string (YYYY-MM-DD). */
+/** Parse DD/MM/YYYY → ISO YYYY-MM-DD. */
 function parseCsvDate(ddmmyyyy, rowNum) {
   if (!/^\d{1,2}\/\d{2}\/\d{4}$/.test(ddmmyyyy)) {
-    throw new Error(`Row ${rowNum}: invalid date format "${ddmmyyyy}" (expected DD/MM/YYYY)`)
+    throw new Error(`Row ${rowNum}: invalid date "${ddmmyyyy}" (expected DD/MM/YYYY)`)
   }
   const [dd, mm, yyyy] = ddmmyyyy.split('/')
   return `${yyyy}-${mm.padStart(2, '0')}-${dd.padStart(2, '0')}`
 }
 
-/** Add one day to an ISO date string (YYYY-MM-DD). */
-function addOneDay(isoDate) {
-  const d = new Date(isoDate + 'T12:00:00Z')
-  d.setUTCDate(d.getUTCDate() + 1)
-  return d.toISOString().slice(0, 10)
+/**
+ * Resolve a team from the CSV name.
+ * Real teams: return full object from teamDetails (keyed by Spanish name).
+ * Placeholders: return verbatim string as name/code.
+ */
+function resolveTeam(rawName) {
+  const t = teamDetails[rawName]
+  if (t) {
+    return { name: rawName, code: t.code, flag: t.flag, confederation: t.confederation }
+  }
+  // Knockout placeholder (e.g. "1°A", "Gan. P74", "Mejor 3°(A/B/C/D/F)", "Per. P101")
+  return { name: rawName, code: rawName, flag: '', confederation: '' }
+}
+
+/** Returns true for real teams (not placeholders). */
+function isRealTeam(name) {
+  return Boolean(teamDetails[name])
 }
 
 /**
- * Resolve a team entry from the CSV.
- * - If the code exists in teamDetails -> return full Team object.
- * - Otherwise -> treat as placeholder string.
+ * Derive matchday (1, 2, or 3) for group-stage matches.
+ *   Matchday 1: matches  1–24  (12 groups × 2 matches)
+ *   Matchday 2: matches 25–48
+ *   Matchday 3: matches 49–72
  */
-function resolveTeam(rawCode) {
-  const t = teamDetails[rawCode]
-  if (t) {
-    return { name: t.name, code: t.code, flag: t.flag, confederation: t.confederation }
-  }
-  // Placeholder (e.g. "1 grado A", "Gan. P73", "Per. P101")
-  return { name: rawCode, code: rawCode, flag: '', confederation: '' }
-}
-
-/** Returns true if the team code is a real team (not a placeholder). */
-function isRealTeam(code) {
-  return Boolean(teamDetails[code])
+function deriveMatchday(matchNumber) {
+  if (matchNumber <= 24) return 1
+  if (matchNumber <= 48) return 2
+  return 3
 }
 
 // ============================================================
@@ -147,7 +163,7 @@ csvHeader.forEach((h, i) => { COL[h] = i })
 
 for (const col of REQUIRED_COLUMNS) {
   if (COL[col] === undefined) {
-    throw new Error(`CSV is missing required column: "${col}". Found: ${csvHeader.join(', ')}`)
+    throw new Error(`CSV missing required column: "${col}". Found: ${csvHeader.join(', ')}`)
   }
 }
 
@@ -167,14 +183,12 @@ for (let i = 1; i < csvLines.length; i++) {
   const equipo1Raw  = cols[COL['Equipo_1']].trim()
   const equipo2Raw  = cols[COL['Equipo_2']].trim()
 
-  const dateET = parseCsvDate(fechaRaw, i + 1)
+  // Fecha column = Argentina calendar date for every match.
+  const dateARG = parseCsvDate(fechaRaw, i + 1)
 
-  // Handle midnight crossing: Hora_ARG ending in '*' means 00:00 of the next day in Argentina.
-  const midnightCrossing = horaARGRaw.endsWith('*')
-  const horaARG = midnightCrossing ? horaARGRaw.slice(0, -1) : horaARGRaw
-  const dateARG = midnightCrossing ? addOneDay(dateET) : dateET
+  // Strip trailing '*' from Hora_ARG – no date shift (00:00* = 00:00 of the SAME day).
+  const timeARG = horaARGRaw.replace(/\*$/, '')
 
-  // Derive matchday for group stage
   const matchday = fase === 'Fase de Grupos' ? deriveMatchday(matchNumber) : null
 
   matches.push({
@@ -183,49 +197,43 @@ for (let i = 1; i < csvLines.length; i++) {
     stage: fase,
     group: grupo === '-' ? null : grupo,
     matchday,
-    date: dateET,
+    date: dateARG,    // same as dateARG (Fecha is the ARG calendar date)
     dateARG,
     timeET: horaET,
-    timeARG: horaARG,
+    timeARG,
     city: ciudad,
     team1: resolveTeam(equipo1Raw),
     team2: resolveTeam(equipo2Raw),
   })
 }
 
-/**
- * Derive matchday (1, 2, or 3) for group-stage matches.
- *  - Matchday 1: matches 1-24  (all 12 groups x 2 matches each)
- *  - Matchday 2: matches 25-48
- *  - Matchday 3: matches 49-72
- */
-function deriveMatchday(matchNumber) {
-  if (matchNumber <= 24) return 1
-  if (matchNumber <= 48) return 2
-  return 3
+// ============================================================
+// VALIDATION
+// ============================================================
+
+// Total matches
+if (matches.length !== 104) {
+  throw new Error(`Expected 104 matches, found ${matches.length}`)
 }
 
-// ============================================================
-// VALIDATION (group stage)
-// ============================================================
+// Group stage
 const groupMatches = matches.filter(m => m.stage === 'Fase de Grupos')
-
 if (groupMatches.length !== 72) {
   throw new Error(`Expected 72 group-stage matches, found ${groupMatches.length}`)
 }
 
-// Each real team should have exactly 3 group-stage matches
+// Each real team: exactly 3 group-stage matches
 const teamMatchCounts = {}
 for (const m of groupMatches) {
   for (const t of [m.team1, m.team2]) {
-    if (isRealTeam(t.code)) {
-      teamMatchCounts[t.code] = (teamMatchCounts[t.code] ?? 0) + 1
+    if (isRealTeam(t.name)) {
+      teamMatchCounts[t.name] = (teamMatchCounts[t.name] ?? 0) + 1
     }
   }
 }
-for (const [code, count] of Object.entries(teamMatchCounts)) {
+for (const [name, count] of Object.entries(teamMatchCounts)) {
   if (count !== 3) {
-    throw new Error(`${code} should have 3 group matches, found ${count}`)
+    throw new Error(`"${name}" should have 3 group matches, found ${count}`)
   }
 }
 
@@ -233,9 +241,9 @@ for (const [code, count] of Object.entries(teamMatchCounts)) {
 // OUTPUT
 // ============================================================
 
-// All real teams (used by team search - placeholders are excluded)
-const allTeams = Object.values(teamDetails).map(t => ({
-  name: t.name,
+// All real teams (search index – placeholders excluded)
+const allTeams = Object.entries(teamDetails).map(([name, t]) => ({
+  name,
   code: t.code,
   flag: t.flag,
   confederation: t.confederation,
@@ -246,7 +254,7 @@ const output = {
   metadata: {
     tournament: "FIFA World Cup 2026",
     edition: 23,
-    hostCountries: ["Mexico", "USA", "Canada"],
+    hostCountries: ["México", "Estados Unidos", "Canadá"],
     openingMatch: "2026-06-11",
     final: "2026-07-19",
     totalTeams: 48,
@@ -264,13 +272,14 @@ const output = {
 const outPath = join(__dirname, '../src/data/fixtures.json')
 writeFileSync(outPath, JSON.stringify(output, null, 2))
 
+const stageCounts = {}
+for (const m of matches) {
+  stageCounts[m.stage] = (stageCounts[m.stage] ?? 0) + 1
+}
+
 console.log(`✅ Generated ${matches.length} matches from data/fixture_mundial_2026-v2.csv`)
-console.log(`   Fase de Grupos:  ${matches.filter(m => m.stage === 'Fase de Grupos').length} matches`)
-console.log(`   Dieciseisavos:   ${matches.filter(m => m.stage === 'Dieciseisavos').length} matches`)
-console.log(`   Octavos:         ${matches.filter(m => m.stage === 'Octavos').length} matches`)
-console.log(`   Cuartos:         ${matches.filter(m => m.stage === 'Cuartos').length} matches`)
-console.log(`   Semifinal:       ${matches.filter(m => m.stage === 'Semifinal').length} matches`)
-console.log(`   Tercer Puesto:   ${matches.filter(m => m.stage === 'Tercer Puesto').length} match`)
-console.log(`   Final:           ${matches.filter(m => m.stage === 'Final').length} match`)
-console.log(`   Real teams:      ${allTeams.length}`)
+for (const [stage, count] of Object.entries(stageCounts)) {
+  console.log(`   ${stage}: ${count}`)
+}
+console.log(`   Real teams: ${allTeams.length}`)
 console.log(`📁 Output: ${outPath}`)

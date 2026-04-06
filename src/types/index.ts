@@ -3,21 +3,22 @@ export interface Team {
   code: string
   flag: string
   confederation: string
+  group?: string
 }
 
 export interface Match {
   id: number
+  matchNumber: number
   stage: string
   group: string | null
   matchday: number | null
-  date: string      // YYYY-MM-DD
-  time: string      // HH:mm
-  timezone: string  // "ET"
+  date: string      // YYYY-MM-DD (ET date)
+  dateARG: string   // YYYY-MM-DD (Argentina date; may differ when Hora_ARG crosses midnight)
+  timeET: string    // HH:mm (Eastern Time)
+  timeARG: string   // HH:mm (Argentina Time, UTC-3)
   city: string
-  venue: string
-  country: string
-  homeTeam: Team
-  awayTeam: Team
+  team1: Team
+  team2: Team
 }
 
 export interface FixturesData {
@@ -30,7 +31,8 @@ export interface FixturesData {
     totalTeams: number
     totalGroups: number
     totalMatches: number
-    timezone: string
+    primaryTimezone: string
+    secondaryTimezone: string
     dataSource: string
     lastUpdated: string
   }

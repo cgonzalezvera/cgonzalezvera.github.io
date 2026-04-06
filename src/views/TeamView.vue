@@ -38,7 +38,7 @@
       </div>
 
       <!-- Timezone note -->
-      <p class="tz-note">⏰ All times in <strong>ET (Eastern Time)</strong></p>
+      <p class="tz-note">⏰ Times shown in <strong>Argentina (ART)</strong> and <span class="tz-secondary">ET</span></p>
 
       <!-- Matches -->
       <div v-if="teamMatches.length" class="match-grid">
@@ -46,7 +46,6 @@
           v-for="match in teamMatches"
           :key="match.id"
           :match="match"
-          :show-local-time="true"
         />
       </div>
       <p v-else class="no-matches">No matches found for this team.</p>
@@ -79,10 +78,10 @@ const team = computed<Team | undefined>(() =>
 const teamMatches = computed<Match[]>(() =>
   data.matches
     .filter(m =>
-      m.homeTeam.code === props.code ||
-      m.awayTeam.code === props.code
+      m.team1.code === props.code ||
+      m.team2.code === props.code
     )
-    .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
+    .sort((a, b) => a.dateARG.localeCompare(b.dateARG) || a.timeARG.localeCompare(b.timeARG))
 )
 
 const groupInfo = computed(() => {
@@ -92,12 +91,12 @@ const groupInfo = computed(() => {
 
 const groupTeams = computed<Team[]>(() => {
   if (!groupInfo.value) return []
-  // Find all teams in the same group by looking at group stage matches
+  // Find all real teams in the same group
   const groupMatches = data.matches.filter(m => m.group === groupInfo.value)
   const teamCodes = new Set<string>()
   const teams: Team[] = []
   for (const m of groupMatches) {
-    for (const t of [m.homeTeam, m.awayTeam]) {
+    for (const t of [m.team1, m.team2]) {
       if (!teamCodes.has(t.code)) {
         teamCodes.add(t.code)
         const found = data.teams.find(dt => dt.code === t.code)

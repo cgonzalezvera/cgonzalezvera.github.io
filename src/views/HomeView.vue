@@ -8,7 +8,7 @@
           FIFA World Cup 2026
         </h1>
         <p class="hero__subtitle">June 11 – July 19, 2026 · 48 Teams · 104 Matches</p>
-        <p class="hero__tz-note">⏰ All times shown in <strong>ET (Eastern Time)</strong></p>
+        <p class="hero__tz-note">⏰ Times shown in <strong>Argentina (ART)</strong> and <span class="hero__tz-secondary">ET</span></p>
       </div>
     </section>
 
@@ -30,7 +30,6 @@
           v-for="match in todayMatches"
           :key="match.id"
           :match="match"
-          :show-local-time="true"
         />
       </div>
       <div v-else class="no-matches">
@@ -51,7 +50,6 @@
           v-for="match in upcomingMatches"
           :key="match.id"
           :match="match"
-          :show-local-time="true"
         />
       </div>
     </section>
@@ -92,27 +90,44 @@ import type { FixturesData, Match } from '../types'
 
 const data = fixturesData as FixturesData
 
-const today = new Date().toISOString().slice(0, 10)
+/** Get today's date in Argentina (UTC-3) as YYYY-MM-DD. */
+function getTodayARG(): string {
+  const now = new Date()
+  const argOffset = -3 * 60
+  const localOffset = now.getTimezoneOffset()
+  const argMs = now.getTime() + (localOffset - argOffset) * 60 * 1000
+  const arg = new Date(argMs)
+  const y = arg.getFullYear()
+  const m = String(arg.getMonth() + 1).padStart(2, '0')
+  const d = String(arg.getDate()).padStart(2, '0')
+  return `${y}-${m}-${d}`
+}
+
+const todayARG = getTodayARG()
+
 const todayLabel = computed(() => {
-  const d = new Date()
-  return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+  const [y, m, d] = todayARG.split('-').map(Number)
+  const date = new Date(y, m - 1, d)
+  return date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
 })
 
 const todayMatches = computed<Match[]>(() =>
-  data.matches.filter(m => m.date === today).sort((a, b) => a.time.localeCompare(b.time))
+  data.matches
+    .filter(m => m.dateARG === todayARG)
+    .sort((a, b) => a.timeARG.localeCompare(b.timeARG))
 )
 
 const upcomingMatches = computed<Match[]>(() => {
-  const start = new Date(today)
-  start.setDate(start.getDate() + 1)
-  const end = new Date(today)
-  end.setDate(end.getDate() + 7)
+  const [ty, tm, td] = todayARG.split('-').map(Number)
+  const start = new Date(ty, tm - 1, td + 1)
+  const end   = new Date(ty, tm - 1, td + 7)
   return data.matches
     .filter(m => {
-      const d = new Date(m.date + 'T00:00:00')
-      return d >= start && d <= end
+      const [y, mo, d] = m.dateARG.split('-').map(Number)
+      const date = new Date(y, mo - 1, d)
+      return date >= start && date <= end
     })
-    .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
+    .sort((a, b) => a.dateARG.localeCompare(b.dateARG) || a.timeARG.localeCompare(b.timeARG))
 })
 
 // Stage navigation
@@ -133,6 +148,6 @@ const activeStage = ref(stageList.value[0] ?? '')
 const stageMatches = computed<Match[]>(() =>
   data.matches
     .filter(m => m.stage === activeStage.value)
-    .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
+    .sort((a, b) => a.dateARG.localeCompare(b.dateARG) || a.timeARG.localeCompare(b.timeARG))
 )
 </script>

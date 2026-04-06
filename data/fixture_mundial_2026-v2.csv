@@ -1,105 +1,105 @@
 Nro_Partido,Fase,Grupo,Ciudad,Fecha,Hora_ET,Hora_ARG,Equipo_1,Equipo_2
-1,Fase de Grupos,G,Atlanta,11/06/2026,13:00,14:00,FRA,ECU
-2,Fase de Grupos,G,New York/New Jersey,11/06/2026,16:00,17:00,IRQ,ALG
-3,Fase de Grupos,A,Mexico City,11/06/2026,19:00,20:00,MEX,POL
-4,Fase de Grupos,A,Los Angeles,11/06/2026,22:00,23:00,KOR,CIV
-5,Fase de Grupos,H,Dallas,12/06/2026,13:00,14:00,GER,COL
-6,Fase de Grupos,B,New York/New Jersey,12/06/2026,16:00,17:00,USA,SUI
-7,Fase de Grupos,H,Seattle,12/06/2026,19:00,20:00,JOR,TUN
-8,Fase de Grupos,B,Miami,12/06/2026,22:00,23:00,JPN,EGY
-9,Fase de Grupos,I,Boston,13/06/2026,13:00,14:00,ENG,SCO
-10,Fase de Grupos,C,Toronto,13/06/2026,16:00,17:00,CAN,CRO
-11,Fase de Grupos,I,Atlanta,13/06/2026,19:00,20:00,PAN,URU
-12,Fase de Grupos,C,Monterrey,13/06/2026,22:00,23:00,AUS,SEN
-13,Fase de Grupos,J,San Francisco Bay Area,14/06/2026,13:00,14:00,NED,CZE
-14,Fase de Grupos,D,New York/New Jersey,14/06/2026,16:00,17:00,ARG,DEN
-15,Fase de Grupos,J,Philadelphia,14/06/2026,19:00,20:00,HON,MAR
-16,Fase de Grupos,D,Atlanta,14/06/2026,22:00,23:00,NGA,IRN
-17,Fase de Grupos,K,Kansas City,15/06/2026,13:00,14:00,BEL,SRB
-18,Fase de Grupos,E,Los Angeles,15/06/2026,16:00,17:00,BRA,AUT
-19,Fase de Grupos,K,Vancouver,15/06/2026,19:00,20:00,CRC,NZL
-20,Fase de Grupos,E,San Francisco Bay Area,15/06/2026,22:00,23:00,KSA,RSA
-21,Fase de Grupos,L,Guadalajara,16/06/2026,13:00,14:00,POR,ITA
-22,Fase de Grupos,F,Miami,16/06/2026,16:00,17:00,ESP,PAR
-23,Fase de Grupos,L,Houston,16/06/2026,19:00,20:00,IDN,VEN
-24,Fase de Grupos,F,Dallas,16/06/2026,22:00,23:00,QAT,CMR
-25,Fase de Grupos,G,Philadelphia,17/06/2026,13:00,14:00,FRA,IRQ
-26,Fase de Grupos,A,Guadalajara,17/06/2026,16:00,17:00,MEX,KOR
-27,Fase de Grupos,G,Los Angeles,17/06/2026,19:00,20:00,ECU,ALG
-28,Fase de Grupos,A,Dallas,17/06/2026,22:00,23:00,POL,CIV
-29,Fase de Grupos,H,Dallas,18/06/2026,13:00,14:00,GER,JOR
-30,Fase de Grupos,H,Houston,18/06/2026,16:00,17:00,COL,TUN
-31,Fase de Grupos,B,Seattle,18/06/2026,19:00,20:00,USA,JPN
-32,Fase de Grupos,B,San Francisco Bay Area,18/06/2026,22:00,23:00,SUI,EGY
-33,Fase de Grupos,I,New York/New Jersey,19/06/2026,13:00,14:00,ENG,PAN
-34,Fase de Grupos,I,Dallas,19/06/2026,16:00,17:00,SCO,URU
-35,Fase de Grupos,C,Vancouver,19/06/2026,19:00,20:00,CAN,AUS
-36,Fase de Grupos,C,Monterrey,19/06/2026,22:00,23:00,CRO,SEN
-37,Fase de Grupos,J,Toronto,20/06/2026,13:00,14:00,NED,HON
-38,Fase de Grupos,J,Houston,20/06/2026,16:00,17:00,CZE,MAR
-39,Fase de Grupos,D,Los Angeles,20/06/2026,19:00,20:00,ARG,NGA
-40,Fase de Grupos,D,Boston,20/06/2026,22:00,23:00,DEN,IRN
-41,Fase de Grupos,K,Miami,21/06/2026,13:00,14:00,BEL,CRC
-42,Fase de Grupos,K,Kansas City,21/06/2026,16:00,17:00,SRB,NZL
-43,Fase de Grupos,E,Seattle,21/06/2026,19:00,20:00,BRA,KSA
-44,Fase de Grupos,E,Houston,21/06/2026,22:00,23:00,AUT,RSA
-45,Fase de Grupos,L,Monterrey,22/06/2026,13:00,14:00,POR,IDN
-46,Fase de Grupos,L,Philadelphia,22/06/2026,16:00,17:00,ITA,VEN
-47,Fase de Grupos,F,Miami,22/06/2026,19:00,20:00,ESP,QAT
-48,Fase de Grupos,F,Kansas City,22/06/2026,22:00,23:00,PAR,CMR
-49,Fase de Grupos,I,Boston,23/06/2026,14:00,15:00,ENG,URU
-50,Fase de Grupos,I,Atlanta,23/06/2026,14:00,15:00,SCO,PAN
-51,Fase de Grupos,B,New York/New Jersey,23/06/2026,18:00,19:00,USA,EGY
-52,Fase de Grupos,B,Miami,23/06/2026,18:00,19:00,SUI,JPN
-53,Fase de Grupos,A,Mexico City,23/06/2026,22:00,23:00,MEX,CIV
-54,Fase de Grupos,A,Guadalajara,23/06/2026,22:00,23:00,POL,KOR
-55,Fase de Grupos,C,Toronto,24/06/2026,14:00,15:00,CAN,SEN
-56,Fase de Grupos,C,Vancouver,24/06/2026,14:00,15:00,CRO,AUS
-57,Fase de Grupos,J,San Francisco Bay Area,24/06/2026,18:00,19:00,NED,MAR
-58,Fase de Grupos,J,Philadelphia,24/06/2026,18:00,19:00,CZE,HON
-59,Fase de Grupos,D,New York/New Jersey,24/06/2026,22:00,23:00,ARG,IRN
-60,Fase de Grupos,D,Atlanta,24/06/2026,22:00,23:00,DEN,NGA
-61,Fase de Grupos,F,Dallas,25/06/2026,14:00,15:00,ESP,CMR
-62,Fase de Grupos,F,Kansas City,25/06/2026,14:00,15:00,PAR,QAT
-63,Fase de Grupos,K,Miami,25/06/2026,18:00,19:00,BEL,NZL
-64,Fase de Grupos,K,Vancouver,25/06/2026,18:00,19:00,SRB,CRC
-65,Fase de Grupos,E,Los Angeles,25/06/2026,22:00,23:00,BRA,RSA
-66,Fase de Grupos,E,San Francisco Bay Area,25/06/2026,22:00,23:00,AUT,KSA
-67,Fase de Grupos,L,Guadalajara,26/06/2026,14:00,15:00,POR,VEN
-68,Fase de Grupos,L,Monterrey,26/06/2026,14:00,15:00,ITA,IDN
-69,Fase de Grupos,H,Dallas,26/06/2026,18:00,19:00,GER,TUN
-70,Fase de Grupos,H,Seattle,26/06/2026,18:00,19:00,COL,JOR
-71,Fase de Grupos,G,Atlanta,26/06/2026,22:00,23:00,FRA,ALG
-72,Fase de Grupos,G,New York/New Jersey,26/06/2026,22:00,23:00,ECU,IRQ
-73,Dieciseisavos,-,New York/New Jersey,27/06/2026,18:00,19:00,1°A,Mejor 3°(B/C/D)
-74,Dieciseisavos,-,Miami,27/06/2026,21:00,22:00,2°C,2°D
-75,Dieciseisavos,-,Los Angeles,28/06/2026,15:00,16:00,1°C,Mejor 3°(A/B/F)
-76,Dieciseisavos,-,Mexico City,28/06/2026,18:00,19:00,2°A,2°B
-77,Dieciseisavos,-,Atlanta,28/06/2026,21:00,22:00,1°D,Mejor 3°(E/F/G)
-78,Dieciseisavos,-,Dallas,29/06/2026,15:00,16:00,2°E,2°F
-79,Dieciseisavos,-,Seattle,29/06/2026,18:00,19:00,1°B,Mejor 3°(H/I/J)
-80,Dieciseisavos,-,San Francisco Bay Area,29/06/2026,21:00,22:00,2°G,2°H
-81,Dieciseisavos,-,Philadelphia,30/06/2026,15:00,16:00,1°E,Mejor 3°(K/L/A)
-82,Dieciseisavos,-,Toronto,30/06/2026,18:00,19:00,2°I,2°J
-83,Dieciseisavos,-,Kansas City,01/07/2026,15:00,16:00,1°F,Mejor 3°(B/C/E)
-84,Dieciseisavos,-,Vancouver,01/07/2026,18:00,19:00,2°K,2°L
-85,Dieciseisavos,-,Guadalajara,02/07/2026,15:00,16:00,1°G,Mejor 3°(D/E/H)
-86,Dieciseisavos,-,Houston,02/07/2026,18:00,19:00,1°H,Mejor 3°(I/J/K)
-87,Dieciseisavos,-,New York/New Jersey,02/07/2026,21:00,22:00,1°I,1°J
-88,Dieciseisavos,-,Los Angeles,03/07/2026,18:00,19:00,1°K,1°L
-89,Octavos,-,New York/New Jersey,04/07/2026,15:00,16:00,Gan. P73,Gan. P74
-90,Octavos,-,Atlanta,04/07/2026,21:00,22:00,Gan. P75,Gan. P76
-91,Octavos,-,Mexico City,05/07/2026,15:00,16:00,Gan. P77,Gan. P78
-92,Octavos,-,Los Angeles,05/07/2026,21:00,22:00,Gan. P79,Gan. P80
-93,Octavos,-,Dallas,06/07/2026,15:00,16:00,Gan. P81,Gan. P82
-94,Octavos,-,Miami,06/07/2026,21:00,22:00,Gan. P83,Gan. P84
-95,Octavos,-,Seattle,07/07/2026,15:00,16:00,Gan. P85,Gan. P86
-96,Octavos,-,New York/New Jersey,08/07/2026,18:00,19:00,Gan. P87,Gan. P88
-97,Cuartos,-,New York/New Jersey,09/07/2026,15:00,16:00,Gan. P89,Gan. P90
-98,Cuartos,-,Los Angeles,09/07/2026,21:00,22:00,Gan. P91,Gan. P92
-99,Cuartos,-,Dallas,11/07/2026,15:00,16:00,Gan. P93,Gan. P94
-100,Cuartos,-,Atlanta,12/07/2026,21:00,22:00,Gan. P95,Gan. P96
-101,Semifinal,-,New York/New Jersey,14/07/2026,18:00,19:00,Gan. P97,Gan. P98
-102,Semifinal,-,Los Angeles,15/07/2026,18:00,19:00,Gan. P99,Gan. P100
-103,Tercer Puesto,-,Los Angeles,18/07/2026,15:00,16:00,Per. P101,Per. P102
-104,Final,-,New York/New Jersey,19/07/2026,18:00,19:00,Gan. P101,Gan. P102
+1,Fase de Grupos,A,Ciudad de México,11/06/2026,15:00,16:00,México,Sudáfrica
+2,Fase de Grupos,A,Guadalajara,11/06/2026,22:00,23:00,Corea del Sur,Chequia
+3,Fase de Grupos,A,Atlanta,18/06/2026,12:00,13:00,Chequia,Sudáfrica
+4,Fase de Grupos,A,Guadalajara,18/06/2026,21:00,22:00,México,Corea del Sur
+5,Fase de Grupos,A,Ciudad de México,24/06/2026,21:00,22:00,Chequia,México
+6,Fase de Grupos,A,Monterrey,24/06/2026,21:00,22:00,Sudáfrica,Corea del Sur
+7,Fase de Grupos,B,Toronto,12/06/2026,15:00,16:00,Canadá,Bosnia y Herzegovina
+8,Fase de Grupos,B,San Francisco,13/06/2026,15:00,16:00,Qatar,Suiza
+9,Fase de Grupos,B,Los Ángeles,18/06/2026,15:00,16:00,Suiza,Bosnia y Herzegovina
+10,Fase de Grupos,B,Vancouver,18/06/2026,18:00,19:00,Canadá,Qatar
+11,Fase de Grupos,B,Vancouver,24/06/2026,15:00,16:00,Suiza,Canadá
+12,Fase de Grupos,B,Seattle,24/06/2026,15:00,16:00,Bosnia y Herzegovina,Qatar
+13,Fase de Grupos,C,Nueva York/Nueva Jersey,13/06/2026,18:00,19:00,Brasil,Marruecos
+14,Fase de Grupos,C,Boston,13/06/2026,21:00,22:00,Haití,Escocia
+15,Fase de Grupos,C,Boston,19/06/2026,18:00,19:00,Escocia,Marruecos
+16,Fase de Grupos,C,Filadelfia,19/06/2026,21:00,22:00,Brasil,Haití
+17,Fase de Grupos,C,Miami,24/06/2026,18:00,19:00,Escocia,Brasil
+18,Fase de Grupos,C,Atlanta,24/06/2026,18:00,19:00,Marruecos,Haití
+19,Fase de Grupos,D,Los Ángeles,12/06/2026,21:00,22:00,Estados Unidos,Paraguay
+20,Fase de Grupos,D,Vancouver,14/06/2026,00:00,01:00,Australia,Turquía
+21,Fase de Grupos,D,Seattle,19/06/2026,15:00,16:00,Estados Unidos,Australia
+22,Fase de Grupos,D,San Francisco,20/06/2026,00:00,01:00,Turquía,Paraguay
+23,Fase de Grupos,D,Los Ángeles,25/06/2026,22:00,23:00,Turquía,Estados Unidos
+24,Fase de Grupos,D,San Francisco,25/06/2026,22:00,23:00,Paraguay,Australia
+25,Fase de Grupos,E,Houston,14/06/2026,13:00,14:00,Alemania,Curazao
+26,Fase de Grupos,E,Filadelfia,14/06/2026,19:00,20:00,Costa de Marfil,Ecuador
+27,Fase de Grupos,E,Toronto,20/06/2026,16:00,17:00,Alemania,Costa de Marfil
+28,Fase de Grupos,E,Kansas City,20/06/2026,20:00,21:00,Ecuador,Curazao
+29,Fase de Grupos,E,Nueva York/Nueva Jersey,25/06/2026,16:00,17:00,Ecuador,Alemania
+30,Fase de Grupos,E,Filadelfia,25/06/2026,16:00,17:00,Curazao,Costa de Marfil
+31,Fase de Grupos,F,Dallas,14/06/2026,16:00,17:00,Países Bajos,Japón
+32,Fase de Grupos,F,Monterrey,14/06/2026,22:00,23:00,Suecia,Túnez
+33,Fase de Grupos,F,Houston,20/06/2026,13:00,14:00,Países Bajos,Suecia
+34,Fase de Grupos,F,Kansas City,21/06/2026,00:00,01:00,Túnez,Japón
+35,Fase de Grupos,F,Dallas,25/06/2026,19:00,20:00,Japón,Suecia
+36,Fase de Grupos,F,Kansas City,25/06/2026,19:00,20:00,Túnez,Países Bajos
+37,Fase de Grupos,G,Seattle,15/06/2026,15:00,16:00,Bélgica,Egipto
+38,Fase de Grupos,G,Los Ángeles,15/06/2026,21:00,22:00,Irán,Nueva Zelanda
+39,Fase de Grupos,G,Los Ángeles,21/06/2026,15:00,16:00,Bélgica,Irán
+40,Fase de Grupos,G,Vancouver,21/06/2026,21:00,22:00,Nueva Zelanda,Egipto
+41,Fase de Grupos,G,Seattle,26/06/2026,23:00,00:00*,Egipto,Irán
+42,Fase de Grupos,G,Vancouver,26/06/2026,23:00,00:00*,Nueva Zelanda,Bélgica
+43,Fase de Grupos,H,Atlanta,15/06/2026,12:00,13:00,España,Cabo Verde
+44,Fase de Grupos,H,Miami,15/06/2026,18:00,19:00,Arabia Saudita,Uruguay
+45,Fase de Grupos,H,Atlanta,21/06/2026,12:00,13:00,España,Arabia Saudita
+46,Fase de Grupos,H,Miami,21/06/2026,18:00,19:00,Uruguay,Cabo Verde
+47,Fase de Grupos,H,Houston,26/06/2026,20:00,21:00,Cabo Verde,Arabia Saudita
+48,Fase de Grupos,H,Guadalajara,26/06/2026,20:00,21:00,Uruguay,España
+49,Fase de Grupos,I,Nueva York/Nueva Jersey,16/06/2026,15:00,16:00,Francia,Senegal
+50,Fase de Grupos,I,Boston,16/06/2026,18:00,19:00,Irak,Noruega
+51,Fase de Grupos,I,Filadelfia,22/06/2026,17:00,18:00,Francia,Irak
+52,Fase de Grupos,I,Nueva York/Nueva Jersey,22/06/2026,20:00,21:00,Noruega,Senegal
+53,Fase de Grupos,I,Boston,26/06/2026,15:00,16:00,Noruega,Francia
+54,Fase de Grupos,I,Toronto,26/06/2026,15:00,16:00,Senegal,Irak
+55,Fase de Grupos,J,Kansas City,16/06/2026,21:00,22:00,Argentina,Argelia
+56,Fase de Grupos,J,San Francisco,17/06/2026,00:00,01:00,Austria,Jordania
+57,Fase de Grupos,J,Dallas,22/06/2026,13:00,14:00,Argentina,Austria
+58,Fase de Grupos,J,San Francisco,22/06/2026,23:00,00:00*,Jordania,Argelia
+59,Fase de Grupos,J,Kansas City,27/06/2026,22:00,23:00,Argelia,Austria
+60,Fase de Grupos,J,Dallas,27/06/2026,22:00,23:00,Jordania,Argentina
+61,Fase de Grupos,K,Houston,17/06/2026,13:00,14:00,Portugal,Congo DR
+62,Fase de Grupos,K,Ciudad de México,17/06/2026,22:00,23:00,Uzbekistán,Colombia
+63,Fase de Grupos,K,Houston,23/06/2026,13:00,14:00,Portugal,Uzbekistán
+64,Fase de Grupos,K,Guadalajara,23/06/2026,22:00,23:00,Colombia,Congo DR
+65,Fase de Grupos,K,Miami,27/06/2026,19:30,20:30,Colombia,Portugal
+66,Fase de Grupos,K,Atlanta,27/06/2026,19:30,20:30,Congo DR,Uzbekistán
+67,Fase de Grupos,L,Dallas,17/06/2026,16:00,17:00,Inglaterra,Croacia
+68,Fase de Grupos,L,Toronto,17/06/2026,19:00,20:00,Ghana,Panamá
+69,Fase de Grupos,L,Boston,23/06/2026,16:00,17:00,Inglaterra,Ghana
+70,Fase de Grupos,L,Toronto,23/06/2026,19:00,20:00,Panamá,Croacia
+71,Fase de Grupos,L,Nueva York/Nueva Jersey,27/06/2026,17:00,18:00,Panamá,Inglaterra
+72,Fase de Grupos,L,Filadelfia,27/06/2026,17:00,18:00,Croacia,Ghana
+73,Dieciseisavos de Final,-,Los Ángeles,28/06/2026,15:00,16:00,2°A,2°B
+74,Dieciseisavos de Final,-,Boston,29/06/2026,16:30,17:30,1°E,Mejor 3°(A/B/C/D/F)
+75,Dieciseisavos de Final,-,Monterrey,29/06/2026,21:00,22:00,1°F,2°C
+76,Dieciseisavos de Final,-,Houston,29/06/2026,13:00,14:00,1°C,2°F
+77,Dieciseisavos de Final,-,Nueva York/Nueva Jersey,30/06/2026,17:00,18:00,1°I,Mejor 3°(C/D/F/G/H)
+78,Dieciseisavos de Final,-,Dallas,30/06/2026,13:00,14:00,2°E,2°I
+79,Dieciseisavos de Final,-,Ciudad de México,30/06/2026,21:00,22:00,1°A,Mejor 3°(C/E/F/H/I)
+80,Dieciseisavos de Final,-,Atlanta,01/07/2026,12:00,13:00,1°L,Mejor 3°(E/H/I/J/K)
+81,Dieciseisavos de Final,-,San Francisco,01/07/2026,20:00,21:00,1°D,Mejor 3°(B/E/F/I/J)
+82,Dieciseisavos de Final,-,Seattle,01/07/2026,16:00,17:00,1°G,Mejor 3°(A/E/H/I/J)
+83,Dieciseisavos de Final,-,Toronto,02/07/2026,19:00,20:00,2°K,2°L
+84,Dieciseisavos de Final,-,Los Ángeles,02/07/2026,15:00,16:00,1°H,2°J
+85,Dieciseisavos de Final,-,Vancouver,02/07/2026,23:00,00:00*,1°B,Mejor 3°(E/F/G/I/J)
+86,Dieciseisavos de Final,-,Miami,03/07/2026,18:00,19:00,1°J,2°H
+87,Dieciseisavos de Final,-,Kansas City,03/07/2026,21:30,22:30,1°K,Mejor 3°(D/E/I/J/L)
+88,Dieciseisavos de Final,-,Dallas,03/07/2026,14:00,15:00,2°D,2°G
+89,Octavos de Final,-,Filadelfia,04/07/2026,17:00,18:00,Gan. P74,Gan. P77
+90,Octavos de Final,-,Houston,04/07/2026,13:00,14:00,Gan. P73,Gan. P75
+91,Octavos de Final,-,Nueva York/Nueva Jersey,05/07/2026,16:00,17:00,Gan. P76,Gan. P78
+92,Octavos de Final,-,Ciudad de México,05/07/2026,20:00,21:00,Gan. P79,Gan. P80
+93,Octavos de Final,-,Dallas,06/07/2026,15:00,16:00,Gan. P83,Gan. P84
+94,Octavos de Final,-,Seattle,06/07/2026,20:00,21:00,Gan. P81,Gan. P82
+95,Octavos de Final,-,Atlanta,07/07/2026,12:00,13:00,Gan. P86,Gan. P88
+96,Octavos de Final,-,Vancouver,07/07/2026,16:00,17:00,Gan. P85,Gan. P87
+97,Cuartos de Final,-,Boston,09/07/2026,16:00,17:00,Gan. P89,Gan. P90
+98,Cuartos de Final,-,Los Ángeles,09/07/2026,15:00,16:00,Gan. P93,Gan. P94
+99,Cuartos de Final,-,Miami,11/07/2026,17:00,18:00,Gan. P91,Gan. P92
+100,Cuartos de Final,-,Kansas City,11/07/2026,21:00,22:00,Gan. P95,Gan. P96
+101,Semifinal,-,Dallas,14/07/2026,15:00,16:00,Gan. P97,Gan. P98
+102,Semifinal,-,Atlanta,15/07/2026,15:00,16:00,Gan. P99,Gan. P100
+103,Tercer Puesto,-,Miami,18/07/2026,17:00,18:00,Per. P101,Per. P102
+104,Final,-,Nueva York/Nueva Jersey,19/07/2026,15:00,16:00,Gan. P101,Gan. P102

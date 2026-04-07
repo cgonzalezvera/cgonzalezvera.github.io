@@ -102,6 +102,28 @@ const teamDetails = {
 }
 
 // ============================================================
+// CITY → HOST COUNTRY MAPPING
+// ============================================================
+const cityCountry = {
+  "Ciudad de México": "México",
+  "Guadalajara":      "México",
+  "Monterrey":        "México",
+  "Atlanta":          "Estados Unidos",
+  "Boston":           "Estados Unidos",
+  "Dallas":           "Estados Unidos",
+  "Filadelfia":       "Estados Unidos",
+  "Houston":          "Estados Unidos",
+  "Kansas City":      "Estados Unidos",
+  "Los Ángeles":      "Estados Unidos",
+  "Miami":            "Estados Unidos",
+  "Nueva York/Nueva Jersey": "Estados Unidos",
+  "San Francisco":    "Estados Unidos",
+  "Seattle":          "Estados Unidos",
+  "Toronto":          "Canadá",
+  "Vancouver":        "Canadá",
+}
+
+// ============================================================
 // HELPERS
 // ============================================================
 
@@ -202,6 +224,7 @@ for (let i = 1; i < csvLines.length; i++) {
     timeET: horaET,
     timeARG,
     city: ciudad,
+    country: cityCountry[ciudad] ?? '',
     team1: resolveTeam(equipo1Raw),
     team2: resolveTeam(equipo2Raw),
   })

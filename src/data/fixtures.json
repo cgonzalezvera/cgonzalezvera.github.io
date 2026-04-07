@@ -15,7 +15,7 @@
     "primaryTimezone": "ART (Argentina Time, UTC-3)",
     "secondaryTimezone": "ET (Eastern Time, UTC-4 during tournament)",
     "dataSource": "data/fixture_mundial_2026-v2.csv (single source of truth for all phases)",
-    "lastUpdated": "2026-04-06"
+    "lastUpdated": "2026-04-07"
   },
   "teams": [
     {
@@ -367,6 +367,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Ciudad de México",
+      "country": "México",
       "team1": {
         "name": "México",
         "code": "MEX",
@@ -391,6 +392,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Guadalajara",
+      "country": "México",
       "team1": {
         "name": "Corea del Sur",
         "code": "KOR",
@@ -415,6 +417,7 @@
       "timeET": "12:00",
       "timeARG": "13:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Chequia",
         "code": "CZE",
@@ -439,6 +442,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Guadalajara",
+      "country": "México",
       "team1": {
         "name": "México",
         "code": "MEX",
@@ -463,6 +467,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Ciudad de México",
+      "country": "México",
       "team1": {
         "name": "Chequia",
         "code": "CZE",
@@ -487,6 +492,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Monterrey",
+      "country": "México",
       "team1": {
         "name": "Sudáfrica",
         "code": "RSA",
@@ -511,6 +517,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Toronto",
+      "country": "Canadá",
       "team1": {
         "name": "Canadá",
         "code": "CAN",
@@ -535,6 +542,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "San Francisco",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Qatar",
         "code": "QAT",
@@ -559,6 +567,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Suiza",
         "code": "SUI",
@@ -583,6 +592,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "Canadá",
         "code": "CAN",
@@ -607,6 +617,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "Suiza",
         "code": "SUI",
@@ -631,6 +642,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Seattle",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Bosnia y Herzegovina",
         "code": "BIH",
@@ -655,6 +667,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Brasil",
         "code": "BRA",
@@ -679,6 +692,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Haití",
         "code": "HAI",
@@ -703,6 +717,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Escocia",
         "code": "SCO",
@@ -727,6 +742,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Filadelfia",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Brasil",
         "code": "BRA",
@@ -751,6 +767,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Escocia",
         "code": "SCO",
@@ -775,6 +792,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Marruecos",
         "code": "MAR",
@@ -799,6 +817,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Estados Unidos",
         "code": "USA",
@@ -823,6 +842,7 @@
       "timeET": "00:00",
       "timeARG": "01:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "Australia",
         "code": "AUS",
@@ -847,6 +867,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Seattle",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Estados Unidos",
         "code": "USA",
@@ -871,6 +892,7 @@
       "timeET": "00:00",
       "timeARG": "01:00",
       "city": "San Francisco",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Turquía",
         "code": "TUR",
@@ -895,6 +917,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Turquía",
         "code": "TUR",
@@ -919,6 +942,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "San Francisco",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Paraguay",
         "code": "PAR",
@@ -943,6 +967,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Alemania",
         "code": "GER",
@@ -967,6 +992,7 @@
       "timeET": "19:00",
       "timeARG": "20:00",
       "city": "Filadelfia",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Costa de Marfil",
         "code": "CIV",
@@ -991,6 +1017,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Toronto",
+      "country": "Canadá",
       "team1": {
         "name": "Alemania",
         "code": "GER",
@@ -1015,6 +1042,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Ecuador",
         "code": "ECU",
@@ -1039,6 +1067,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Ecuador",
         "code": "ECU",
@@ -1063,6 +1092,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Filadelfia",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Curazao",
         "code": "CUW",
@@ -1087,6 +1117,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Países Bajos",
         "code": "NED",
@@ -1111,6 +1142,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Monterrey",
+      "country": "México",
       "team1": {
         "name": "Suecia",
         "code": "SWE",
@@ -1135,6 +1167,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Países Bajos",
         "code": "NED",
@@ -1159,6 +1192,7 @@
       "timeET": "00:00",
       "timeARG": "01:00",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Túnez",
         "code": "TUN",
@@ -1183,6 +1217,7 @@
       "timeET": "19:00",
       "timeARG": "20:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Japón",
         "code": "JPN",
@@ -1207,6 +1242,7 @@
       "timeET": "19:00",
       "timeARG": "20:00",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Túnez",
         "code": "TUN",
@@ -1231,6 +1267,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Seattle",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Bélgica",
         "code": "BEL",
@@ -1255,6 +1292,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Irán",
         "code": "IRN",
@@ -1279,6 +1317,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Bélgica",
         "code": "BEL",
@@ -1303,6 +1342,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "Nueva Zelanda",
         "code": "NZL",
@@ -1327,6 +1367,7 @@
       "timeET": "23:00",
       "timeARG": "00:00",
       "city": "Seattle",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Egipto",
         "code": "EGY",
@@ -1351,6 +1392,7 @@
       "timeET": "23:00",
       "timeARG": "00:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "Nueva Zelanda",
         "code": "NZL",
@@ -1375,6 +1417,7 @@
       "timeET": "12:00",
       "timeARG": "13:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "España",
         "code": "ESP",
@@ -1399,6 +1442,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Arabia Saudita",
         "code": "KSA",
@@ -1423,6 +1467,7 @@
       "timeET": "12:00",
       "timeARG": "13:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "España",
         "code": "ESP",
@@ -1447,6 +1492,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Uruguay",
         "code": "URU",
@@ -1471,6 +1517,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Cabo Verde",
         "code": "CPV",
@@ -1495,6 +1542,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "Guadalajara",
+      "country": "México",
       "team1": {
         "name": "Uruguay",
         "code": "URU",
@@ -1519,6 +1567,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Francia",
         "code": "FRA",
@@ -1543,6 +1592,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Irak",
         "code": "IRQ",
@@ -1567,6 +1617,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Filadelfia",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Francia",
         "code": "FRA",
@@ -1591,6 +1642,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Noruega",
         "code": "NOR",
@@ -1615,6 +1667,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Noruega",
         "code": "NOR",
@@ -1639,6 +1692,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Toronto",
+      "country": "Canadá",
       "team1": {
         "name": "Senegal",
         "code": "SEN",
@@ -1663,6 +1717,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Argentina",
         "code": "ARG",
@@ -1687,6 +1742,7 @@
       "timeET": "00:00",
       "timeARG": "01:00",
       "city": "San Francisco",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Austria",
         "code": "AUT",
@@ -1711,6 +1767,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Argentina",
         "code": "ARG",
@@ -1735,6 +1792,7 @@
       "timeET": "23:00",
       "timeARG": "00:00",
       "city": "San Francisco",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Jordania",
         "code": "JOR",
@@ -1759,6 +1817,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Argelia",
         "code": "ALG",
@@ -1783,6 +1842,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Jordania",
         "code": "JOR",
@@ -1807,6 +1867,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Portugal",
         "code": "POR",
@@ -1831,6 +1892,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Ciudad de México",
+      "country": "México",
       "team1": {
         "name": "Uzbekistán",
         "code": "UZB",
@@ -1855,6 +1917,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Portugal",
         "code": "POR",
@@ -1879,6 +1942,7 @@
       "timeET": "22:00",
       "timeARG": "23:00",
       "city": "Guadalajara",
+      "country": "México",
       "team1": {
         "name": "Colombia",
         "code": "COL",
@@ -1903,6 +1967,7 @@
       "timeET": "19:30",
       "timeARG": "20:30",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Colombia",
         "code": "COL",
@@ -1927,6 +1992,7 @@
       "timeET": "19:30",
       "timeARG": "20:30",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Congo DR",
         "code": "COD",
@@ -1951,6 +2017,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Inglaterra",
         "code": "ENG",
@@ -1975,6 +2042,7 @@
       "timeET": "19:00",
       "timeARG": "20:00",
       "city": "Toronto",
+      "country": "Canadá",
       "team1": {
         "name": "Ghana",
         "code": "GHA",
@@ -1999,6 +2067,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Inglaterra",
         "code": "ENG",
@@ -2023,6 +2092,7 @@
       "timeET": "19:00",
       "timeARG": "20:00",
       "city": "Toronto",
+      "country": "Canadá",
       "team1": {
         "name": "Panamá",
         "code": "PAN",
@@ -2047,6 +2117,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Panamá",
         "code": "PAN",
@@ -2071,6 +2142,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Filadelfia",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Croacia",
         "code": "CRO",
@@ -2095,6 +2167,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "2°A",
         "code": "2°A",
@@ -2119,6 +2192,7 @@
       "timeET": "16:30",
       "timeARG": "17:30",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°E",
         "code": "1°E",
@@ -2143,6 +2217,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Monterrey",
+      "country": "México",
       "team1": {
         "name": "1°F",
         "code": "1°F",
@@ -2167,6 +2242,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°C",
         "code": "1°C",
@@ -2191,6 +2267,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°I",
         "code": "1°I",
@@ -2215,6 +2292,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "2°E",
         "code": "2°E",
@@ -2239,6 +2317,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Ciudad de México",
+      "country": "México",
       "team1": {
         "name": "1°A",
         "code": "1°A",
@@ -2263,6 +2342,7 @@
       "timeET": "12:00",
       "timeARG": "13:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°L",
         "code": "1°L",
@@ -2287,6 +2367,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "San Francisco",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°D",
         "code": "1°D",
@@ -2311,6 +2392,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Seattle",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°G",
         "code": "1°G",
@@ -2335,6 +2417,7 @@
       "timeET": "19:00",
       "timeARG": "20:00",
       "city": "Toronto",
+      "country": "Canadá",
       "team1": {
         "name": "2°K",
         "code": "2°K",
@@ -2359,6 +2442,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°H",
         "code": "1°H",
@@ -2383,6 +2467,7 @@
       "timeET": "23:00",
       "timeARG": "00:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "1°B",
         "code": "1°B",
@@ -2407,6 +2492,7 @@
       "timeET": "18:00",
       "timeARG": "19:00",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°J",
         "code": "1°J",
@@ -2431,6 +2517,7 @@
       "timeET": "21:30",
       "timeARG": "22:30",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "1°K",
         "code": "1°K",
@@ -2455,6 +2542,7 @@
       "timeET": "14:00",
       "timeARG": "15:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "2°D",
         "code": "2°D",
@@ -2479,6 +2567,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Filadelfia",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P74",
         "code": "Gan. P74",
@@ -2503,6 +2592,7 @@
       "timeET": "13:00",
       "timeARG": "14:00",
       "city": "Houston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P73",
         "code": "Gan. P73",
@@ -2527,6 +2617,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P76",
         "code": "Gan. P76",
@@ -2551,6 +2642,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "Ciudad de México",
+      "country": "México",
       "team1": {
         "name": "Gan. P79",
         "code": "Gan. P79",
@@ -2575,6 +2667,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P83",
         "code": "Gan. P83",
@@ -2599,6 +2692,7 @@
       "timeET": "20:00",
       "timeARG": "21:00",
       "city": "Seattle",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P81",
         "code": "Gan. P81",
@@ -2623,6 +2717,7 @@
       "timeET": "12:00",
       "timeARG": "13:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P86",
         "code": "Gan. P86",
@@ -2647,6 +2742,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Vancouver",
+      "country": "Canadá",
       "team1": {
         "name": "Gan. P85",
         "code": "Gan. P85",
@@ -2671,6 +2767,7 @@
       "timeET": "16:00",
       "timeARG": "17:00",
       "city": "Boston",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P89",
         "code": "Gan. P89",
@@ -2695,6 +2792,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Los Ángeles",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P93",
         "code": "Gan. P93",
@@ -2719,6 +2817,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P91",
         "code": "Gan. P91",
@@ -2743,6 +2842,7 @@
       "timeET": "21:00",
       "timeARG": "22:00",
       "city": "Kansas City",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P95",
         "code": "Gan. P95",
@@ -2767,6 +2867,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Dallas",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P97",
         "code": "Gan. P97",
@@ -2791,6 +2892,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Atlanta",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P99",
         "code": "Gan. P99",
@@ -2815,6 +2917,7 @@
       "timeET": "17:00",
       "timeARG": "18:00",
       "city": "Miami",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Per. P101",
         "code": "Per. P101",
@@ -2839,6 +2942,7 @@
       "timeET": "15:00",
       "timeARG": "16:00",
       "city": "Nueva York/Nueva Jersey",
+      "country": "Estados Unidos",
       "team1": {
         "name": "Gan. P101",
         "code": "Gan. P101",

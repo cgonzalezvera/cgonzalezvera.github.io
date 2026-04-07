@@ -70,12 +70,53 @@
         </button>
       </div>
 
-      <div class="match-grid">
+      <!-- Host-country filter -->
+      <div class="filter-row">
+        <span class="filter-label">🌎 País sede:</span>
+        <button
+          class="filter-btn"
+          :class="{ 'filter-btn--active': activeCountry === '' }"
+          @click="activeCountry = ''; activeCity = ''"
+        >Todos</button>
+        <button
+          v-for="country in countryList"
+          :key="country"
+          class="filter-btn"
+          :class="{ 'filter-btn--active': activeCountry === country }"
+          @click="activeCountry = country; activeCity = ''"
+        >
+          {{ countryFlag(country) }} {{ country }}
+        </button>
+      </div>
+
+      <!-- City filter -->
+      <div class="filter-row">
+        <span class="filter-label">📍 Ciudad:</span>
+        <button
+          class="filter-btn"
+          :class="{ 'filter-btn--active': activeCity === '' }"
+          @click="activeCity = ''"
+        >Todas</button>
+        <button
+          v-for="city in filteredCityList"
+          :key="city"
+          class="filter-btn"
+          :class="{ 'filter-btn--active': activeCity === city }"
+          @click="activeCity = city"
+        >
+          {{ city }}
+        </button>
+      </div>
+
+      <div v-if="stageMatches.length" class="match-grid">
         <MatchCard
           v-for="match in stageMatches"
           :key="match.id"
           :match="match"
         />
+      </div>
+      <div v-else class="no-matches">
+        <p>No hay partidos con los filtros seleccionados.</p>
       </div>
     </section>
   </div>
@@ -145,9 +186,55 @@ const stageList = computed(() => {
 
 const activeStage = ref(stageList.value[0] ?? '')
 
+// Host-country filter
+const activeCountry = ref('')
+const activeCity = ref('')
+
+const HOST_COUNTRY_FLAGS: Record<string, string> = {
+  'México':         '🇲🇽',
+  'Estados Unidos': '🇺🇸',
+  'Canadá':         '🇨🇦',
+}
+
+function countryFlag(country: string): string {
+  return HOST_COUNTRY_FLAGS[country] ?? ''
+}
+
+const countryList = computed(() => {
+  const seen = new Set<string>()
+  const countries: string[] = []
+  for (const m of data.matches) {
+    if (m.country && !seen.has(m.country)) {
+      seen.add(m.country)
+      countries.push(m.country)
+    }
+  }
+  return countries
+})
+
+/** Cities for the active stage (and country filter if set). */
+const filteredCityList = computed(() => {
+  const seen = new Set<string>()
+  const cities: string[] = []
+  for (const m of data.matches) {
+    if (m.stage !== activeStage.value) continue
+    if (activeCountry.value && m.country !== activeCountry.value) continue
+    if (m.city && !seen.has(m.city)) {
+      seen.add(m.city)
+      cities.push(m.city)
+    }
+  }
+  return cities.sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }))
+})
+
 const stageMatches = computed<Match[]>(() =>
   data.matches
-    .filter(m => m.stage === activeStage.value)
+    .filter(m => {
+      if (m.stage !== activeStage.value) return false
+      if (activeCountry.value && m.country !== activeCountry.value) return false
+      if (activeCity.value && m.city !== activeCity.value) return false
+      return true
+    })
     .sort((a, b) => a.dateARG.localeCompare(b.dateARG) || a.timeARG.localeCompare(b.timeARG))
 )
 </script>

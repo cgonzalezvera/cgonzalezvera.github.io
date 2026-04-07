@@ -356,6 +356,37 @@ a:hover { text-decoration: underline; }
 .stage-tab:hover { border-color: var(--color-primary); color: var(--color-primary); }
 .stage-tab--active { background: var(--color-primary); border-color: var(--color-primary); color: white; }
 
+/* ---- Filter Rows (city / country) ---- */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.filter-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+
+.filter-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1.5px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.filter-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.filter-btn--active { background: var(--color-accent); border-color: var(--color-accent); color: white; }
+
 /* ---- No Matches ---- */
 .no-matches {
   background: var(--color-surface);

@@ -17,6 +17,7 @@ export interface Match {
   timeET: string    // HH:mm (Eastern Time)
   timeARG: string   // HH:mm (Argentina Time, UTC-3)
   city: string
+  country: string
   team1: Team
   team2: Team
 }
